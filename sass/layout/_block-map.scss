@@ -1,0 +1,69 @@
+section.map {
+  .row {
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  .container-fluid {
+    padding: 0;
+  }
+  .container {
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+  .content-group {
+    h1,
+    h2,
+    h3,
+    h4,
+    a,
+    p {
+      color: unset;
+    }
+  }
+  .btn-container {
+    margin-bottom: 2em;
+  }
+  .map-parent {
+    //same as map because of absolute
+    min-height: 650px;
+    #map {
+      width: 100%;
+      height: 650px;
+      &.full-width-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        @media (max-width: $screen-md-max) {
+          width:100%;
+
+        }
+      }
+      &.full-width-left {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        @media (max-width: $screen-md-max) {
+          width:100%;
+        }
+      }
+      @media (max-width: $screen-md-max) {
+        min-height: 400px;
+      }
+      //marker size
+      .yNHHyP-marker-view {
+        img {
+          width: 34px;
+        }
+      }
+      @media (max-width: $screen-md-max) {
+        height: 400px;
+      }
+    }
+    @media (max-width: $screen-md-max) {
+      min-height: 400px;
+    }
+  }
+}

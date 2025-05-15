@@ -1,0 +1,26 @@
+{
+    "key": "ui_options_page_665f0f0413fd1",
+    "title": "Website opties",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Website opties",
+    "menu_slug": "site-settings",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "Site settings",
+    "position": -1,
+    "redirect": 0,
+    "description": "",
+    "menu_icon": {
+        "type": "dashicons",
+        "value": "dashicons-admin-appearance"
+    },
+    "update_button": "Updaten",
+    "updated_message": "Opties bijgewerkt",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1717588621
+}

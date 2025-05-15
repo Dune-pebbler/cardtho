@@ -1,0 +1,248 @@
+{
+    "key": "group_66cf377ed5ffa",
+    "title": "Global block settings",
+    "fields": [
+        {
+            "key": "field_66e1a402bc93f",
+            "label": "Globale instellingen",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
+            "key": "field_66cf388c60e09",
+            "label": "Spacing",
+            "name": "globals_spacing_instellingen",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_66cf38b060e0a",
+                    "label": "Padding top",
+                    "name": "padding_top",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_66cf392a60e0b",
+                    "label": "Padding bottom",
+                    "name": "padding_bottom",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_66cf3e903a25e",
+                    "label": "Content breedte",
+                    "name": "content_breedte",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui_on_text": "Container",
+                    "ui_off_text": "Full",
+                    "ui": 1
+                }
+            ]
+        },
+        {
+            "key": "field_66cf3bd3b1449",
+            "label": "Kleuren",
+            "name": "globals_kleuren_instellingen",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_66cf3bf0b144a",
+                    "label": "Achtergrond kleur",
+                    "name": "achtergrond_kleur",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 0,
+                    "return_format": "string"
+                }
+            ]
+        },
+        {
+            "key": "field_66cf394f8f990",
+            "label": "Afbeelding instellingen",
+            "name": "globals_afbeelding_instellingen",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_66cf3ac58f991",
+                    "label": "Afbeelding fit",
+                    "name": "afbeelding_fit",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "De manier waarin een afbeelding word getoond",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "cover": "Cover",
+                        "contain": "Contain",
+                        "cover-height": "Cover - Hoogte",
+                        "contain-height": "Contain - Hoogte"
+                    },
+                    "default_value": "",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "allow_in_bindings": 1,
+                    "layout": "vertical",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_66cf3cd55fc6e",
+                    "label": "Lazy loading",
+                    "name": "lazy_loading",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "Afbeelding met lazy loading worden geladen nadat de pagina klaar is met laden. Schakel dit uit voor afbeeldingen die boven aan de pagina staan \/ direct te zien zijn als de pagina laad.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "allow_in_bindings": 1,
+                    "ui_on_text": "Aan",
+                    "ui_off_text": "Uit",
+                    "ui": 1
+                },
+                {
+                    "key": "field_67039d8fbdc96",
+                    "label": "Maximale afbeelding hoogte",
+                    "name": "maximale_afbeelding_hoogte",
+                    "aria-label": "",
+                    "type": "range",
+                    "instructions": "0 = geen hoogte beperking. Kan gebruikt worden in combinatie met afbeelding fit om afwijkende afbeeldingen beter te tonen",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "allow_in_bindings": 0,
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1728290281
+}

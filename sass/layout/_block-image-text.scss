@@ -1,0 +1,26 @@
+section.block-image-text {
+  .row {
+    &.imageLeft {
+      flex-direction: row-reverse;
+    }
+  }
+  .img-container {
+    height: 100%;
+    // &.full-width {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 50vw;
+    //   @media (max-width: $screen-md-max) {
+    //     width:100%
+    //   }
+    // } 
+    // &.full-width.imageLeft {
+    //   right: 0;
+    //   left: auto;
+    // }
+  }
+  .content-container {
+    margin-bottom: 2em;
+  }
+}

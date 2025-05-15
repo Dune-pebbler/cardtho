@@ -1,0 +1,111 @@
+//breadcrumbs
+.woocommerce-breadcrumb {
+  padding-left: 12px !important;
+  a {
+    text-decoration: none;
+  }
+}
+
+.woocommerce-archive {
+  .content {
+    display: flex;
+    @media (max-width: $screen-lg-max) {
+      flex-direction: column;
+    }
+    #primary {
+    }
+    #sidebar {
+    }
+  }
+}
+.woo-sidebar-categories {
+  padding-right: 3em;
+  ul {
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+//results
+.woocommerce-result-count {
+  float: right !important;
+  margin-right: 2em !important;
+}
+
+.product.type-product:not(.product.type-product .summary) {
+  .woocommerce-loop-product__title {
+    // text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: black !important;
+  }
+  .price {
+    // text-align: center;
+    font-size: 16px;
+    bdi {
+      color: var(--paragraph-color) !important;
+      font-size: 16px;
+      text-decoration: none;
+      span {
+        color: var(--paragraph-color) !important;
+        font-size: 16px;
+      }
+    }
+  }
+  .onsale {
+    background-color: black !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    padding: 0.5em !important;
+  }
+  .button {
+    border-radius: 50px !important;
+    background-color: black !important;
+    color: white !important;
+    font-weight: 400 !important;
+    position: absolute !important;
+    top: 250px;
+    right: 16px !important;
+    transition: 0.3s ease;
+    opacity: 0;
+  }
+  .summary .button {
+    border-radius: 50px !important;
+    background-color: black !important;
+    color: white !important;
+    font-weight: 400 !important;
+    transition: 0.3s ease;
+    top:auto;
+    right:auto!important;
+    opacity: 1;
+  }
+  .added_to_cart {
+    display: none !important;
+  }
+  &:hover {
+    .button {
+      opacity: 1;
+    }
+  }
+}
+.woocommerce-message {
+  border-top: none !important;
+  &:before {
+    color: black !important;
+  }
+}
+
+.woocommerce form .form-row input.input-text {
+  padding:0.6em;
+}
+th, td, tr, table {
+  border:0px solid transparent!important;
+  outline: 0px solid transparent!important;
+}

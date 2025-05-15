@@ -1,0 +1,31 @@
+section.block-image {
+  .content-group {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--tertiary-color);
+    color: var(--title-color);
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 8px;
+      color: unset;
+    }
+  }
+  .btn-container {
+    margin: 2em 0;
+  }
+  .container-fluid,
+  .row,
+  .col-12 {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .row {
+    width: 100%;
+  }
+}

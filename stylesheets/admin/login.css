@@ -1,0 +1,67 @@
+body.login {
+  background: rgba(0, 0, 0, 0.8);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login form {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px 0 rgba(53, 54, 80, 0.37);
+  padding: 50px 40px;
+  border-radius: 12px;
+  border: none;
+}
+
+.login form p,
+.user-pass-wrap {
+  text-align: center;
+}
+
+.login form .input,
+.login input[type="password"],
+.login input[type="text"] {
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 0px 10px;
+  background-color: #ffffff;
+  border: none;
+}
+
+.login label {
+  color: #fff;
+  margin: 0;
+}
+
+.login .wp-core-ui .button-primary {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #fff;
+  border-radius: 2px;
+  font-size: 14px;
+  height: 36px;
+  line-height: 34px;
+  transition: 0.3s;
+}
+
+.login .wp-core-ui .button-primary:hover {
+  background-color: black;
+  border-color: #888888;
+}
+
+.login .button.wp-hide-pw {
+  color: #acacac;
+}
+
+.login #language-switcher {
+  display: none;
+}
+
+.login .forgetmenot {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  gap: 3px;
+}
+.login #backtoblog, .login #nav, .login .privacy-policy-page-link {
+    display: none;
+}

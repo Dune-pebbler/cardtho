@@ -1,0 +1,19 @@
+.footer-main {
+  padding-top: 2em;
+  .footer-nav {
+    //wordpress menu
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 0;
+    }
+  }
+}
+
+.bottom-footer {
+  * {
+    font-size: 14px;
+  }
+}

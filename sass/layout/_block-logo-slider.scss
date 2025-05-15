@@ -1,0 +1,18 @@
+section.block-logo-slider {
+  .logo-slider {
+    //height set in php
+    &__link {
+      height: 100%;
+    }
+    //hover effect is still buggy probably because the nav is overlaying
+    &__image {
+      object-fit: contain;
+      height: 100%;
+      filter: grayscale(1);
+      &:hover {
+        filter: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

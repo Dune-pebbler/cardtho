@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <?php if ($gtm_code = get_field('gtm_code', 'option')): ?>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', '<?= $gtm_code ?>');
+    </script>
+    <!-- End Google Tag Manager -->
+  <?php endif; ?>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="<?= get_stylesheet_directory_uri(); ?>/js/google-maps-loader.js"></script>
+  <title><?php wp_title(); ?></title>
+  <?php wp_head(); ?>
+</head>
+
+<?php
+//Data
+$search = get_field('site_settings_search_boolean', 'option');
+$button_enabled = get_field('site_settings_button_boolean', 'option');
+$button = get_field('site_settings_button_link', 'option');
+$buttonVariant = get_field('site_settings_button_var', 'option');
+
+$logo_primary = get_field('site_settings_logo_primary', 'option');
+$logo_long = get_field('site_settings_logo_long', 'option');
+?>
+
+<body <?php body_class() ?>>
+
+  <?php if ($gtm_code) : ?>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?= $gtm_code ?>" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+  <?php endif; ?>
+
+  <header>
+    <nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 nav-container static">
+
+            <div class="logo">
+              <a href="/" title="Home">
+                <?php if ($logo_long): ?>
+                  <img src="<?php echo esc_url($logo_long['url']); ?>" alt="<?php echo esc_attr($logo_long['alt']); ?>" />
+                <?php elseif ($logo_primary): ?>
+                  <img src="<?php echo esc_url($logo_primary['url']); ?>"
+                    alt="<?php echo esc_attr($logo_primary['alt']); ?>" />
+                <?php endif; ?>
+              </a>
+            </div>
+            <!-- menu items (mobile and desktop)-->
+            <div id="nav-items">
+              <div id="cross">
+                <div class="cross-line-1"></div>
+                <div class="cross-line-2"></div>
+              </div>
+              <?php
+              wp_nav_menu([
+                'theme_location' => 'primary',
+                'menu_class' => 'primary-nav',
+              ]);
+              ?>
+
+              <?php if ($search): ?>
+                <div class="search">
+                  <form role="search" method="get" class="searchform" action="/">
+                    <input type="text" placeholder="Zoek uw product.." name="s" id="s">
+                    <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
+                  </form>
+                </div>
+              <?php endif; ?>
+
+              <?php if ($button_enabled && $button): ?>
+                <a href="<?php echo esc_url($button['url']); ?>"
+                  class="btn btn-<?= $buttonVariant ?>"><?php echo esc_html($button['title']); ?></a>
+              <?php endif; ?>
+
+
+
+
+
+            </div>
+
+            <!-- end menu items -->
+
+            <div class="hamburger">
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+              <div class="hamburger-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+  <main>

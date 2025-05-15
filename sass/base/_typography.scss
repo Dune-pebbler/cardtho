@@ -1,0 +1,116 @@
+$font1: "Work Sans", sans-serif;
+$font2: "PT Serif", serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-font-smoothing: antialiased;
+  color: var(--title-color);
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-family: $font1;
+  line-height: 1.2;
+  @media (max-width: $screen-lg-max) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  @media (max-width: $screen-md-max) {
+    margin-top: 22px;
+    margin-bottom: 122px;
+  }
+  @media (max-width: $screen-sm-max) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+h1 {
+  font-size: 54px;
+  margin-top: 24px;
+  letter-spacing: 0.5px;
+  @media (max-width: $screen-lg-max) {
+    font-size: 34px;
+  }
+  @media (max-width: $screen-md-max) {
+    font-size: 30px;
+  }
+  @media (max-width: $screen-sm-max) {
+    font-size: 24px;
+  }
+}
+h2 {
+  font-size: 40px;
+  @media (max-width: $screen-lg-max) {
+    font-size: 36px;
+  }
+  @media (max-width: $screen-md-max) {
+    font-size: 32px;
+  }
+  @media (max-width: $screen-sm-max) {
+    font-size: 28px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  @media (max-width: $screen-lg-max) {
+    font-size: 22px;
+  }
+  @media (max-width: $screen-md-max) {
+    font-size: 20px;
+  }
+  @media (max-width: $screen-sm-max) {
+    font-size: 18px;
+  }
+}
+
+h4 {
+  font-size: 1rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+p {
+  -webkit-font-smoothing: antialiased;
+  color: var(--paragraph-color);
+  font-size: 16px;
+  font-weight: 400;
+  @media (max-width: $screen-md-max) {
+    font-size: 16px;
+  }
+  @media (max-width: $screen-sm-max) {
+    font-size: 16px;
+  }
+}
+ul {
+  -webkit-font-smoothing: antialiased;
+  list-style: disc;
+  font-size: 16px;
+  color: var(--paragraph-color);
+  li {
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 0.5rem;
+    color: var(--paragraph-color);
+  }
+}
+a {
+  -webkit-font-smoothing: antialiased;
+  color: var(--link-color);
+  font-weight: 400;
+}
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+//targets placeholders in inputs etc.
+* {
+  font-family: $font1;
+  font-size: 16px;
+}

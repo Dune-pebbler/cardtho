@@ -1,0 +1,29 @@
+//overrides and shameful practices that cannot stand the light of day
+
+
+//owl overrides
+.owl-stage-outer,
+.owl-stage,
+.owl-item {
+  height: 100%;
+  overflow: hidden;
+}
+.owl-nav {
+  .owl-prev,
+  .owl-next {
+    @extend .btn;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    span {
+      font-size: 28px;
+    }
+  }
+  .owl-prev {
+    left: 0%;
+  }
+  .owl-next {
+    right: 0%;
+  }
+}

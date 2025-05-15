@@ -1,0 +1,55 @@
+picture > img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.cover,
+.cover-width,
+.cover img,
+.cover-width img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+.cover-height,
+.cover-height img {
+  height: 100%;
+  width: auto !important;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contain,
+.contain-width,
+.contain img,
+.contain-width img {
+  width: 100%;
+  object-fit: contain;
+}
+.contain-height .contain-height img {
+  height: 100%;
+  width: auto !important;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.background,
+.background-cover {
+  position: absolute;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.background-contain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}

@@ -1,0 +1,48 @@
+.block-faq {
+  .faq-item {
+    margin-bottom: 1em;
+  }
+  .faq-question {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(230, 230, 230);
+    }
+    .icon {
+      height: 20px;
+      width: 20px;
+    }
+    .icon-minus {
+      display: none;
+    }
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 2em; // Only left-right padding to avoid height issues
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    // Prevents border visibility on collapse
+    border-top: none;
+    background-color: rgb(244, 244, 244);
+  }
+
+  .faq-item.active {
+    .faq-answer {
+      max-height: 500px; // A value greater than the expected max height of the content
+      padding: 2em;
+    }
+    .faq-question {
+      background-color: rgb(230, 230, 230);
+    }
+    .icon-plus {
+      display: none;
+    }
+    .icon-minus {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.block-masonry {
+  .masonry-grid {
+    margin: 0 auto;
+  }
+
+  .masonry-item {
+    width: calc(33.333% - 20px); /* Subtracting gutter size */
+    margin-bottom: 20px; /* Matching gutter size */
+    &.masonry-cols-1 {
+      width:100%;
+    }
+    
+    &.masonry-cols-2 {
+      width: calc(50% - 20px);
+    }
+
+    &.masonry-cols-4 {
+      width: calc(25% - 20px);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .masonry-item {
+      width: calc(50% - 20px);
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .masonry-item {
+      width: 100%;
+    }
+  }
+}
