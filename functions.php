@@ -61,7 +61,6 @@ register_nav_menus(array(
 
 
 # FUNCTIONS
-
 function remove_dashboard_comments()
 {
   remove_menu_page('index.php');
@@ -74,6 +73,7 @@ function remove_dashboard_comments()
     exit;
   });
 }
+
 function theme_enqueue_styles()
 {
   wp_enqueue_style('fontawesome.all.min.js', get_template_directory_uri() . "/assets/fontawesome/css/all.min.css");
