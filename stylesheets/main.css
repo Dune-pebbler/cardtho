@@ -295,6 +295,7 @@ html {
   font-size: 16px;
   line-height: 1.5;
   color: #333b6f;
+  background: blue;
 }
 picture {
   display: inline-block;
