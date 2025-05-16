@@ -18,3 +18,14 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
           server-dir: /public_html/speelplaatsruben/wp-content/themes/skelet-theme/
+          protocol: ftp  # Plain FTP as shown in your FileZilla
+          port: 21  # Standard FTP port
+          security: loose  # For insecure plain FTP
+          timeout: 180000  # 3 minutes timeout
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            github-deploy-key
+            github-deploy-key.pub
+            .github/**
