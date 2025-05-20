@@ -1,6 +1,6 @@
 <?php
 // Configuration
-define('CUSTOM_LOGIN_SLUG', 'dp-login'); // Change this to modify the login URL
+// define('CUSTOM_LOGIN_SLUG', 'dp-login'); // Change this to modify the login URL
 
 // Custom login styling and setup
 function custom_login_styles()
@@ -10,21 +10,21 @@ function custom_login_styles()
 add_action('login_enqueue_scripts', 'custom_login_styles');
 
 // Change login URL
-function custom_login_url($login_url) 
-{
-    return str_replace('wp-login.php', CUSTOM_LOGIN_SLUG, $login_url);
-}
-add_filter('login_url', 'custom_login_url', 10, 1);
+// function custom_login_url($login_url) 
+// {
+//     return str_replace('wp-login.php', CUSTOM_LOGIN_SLUG, $login_url);
+// }
+// add_filter('login_url', 'custom_login_url', 10, 1);
 
 // Redirect old login page
-function redirect_login_page() 
-{
-    if ($GLOBALS['pagenow'] === 'wp-login.php' && !is_admin() && $_SERVER['REQUEST_METHOD'] === 'GET') {
-        wp_redirect(home_url(CUSTOM_LOGIN_SLUG));
-        exit;
-    }
-}
-add_action('init', 'redirect_login_page');
+// function redirect_login_page() 
+// {
+//     if ($GLOBALS['pagenow'] === 'wp-login.php' && !is_admin() && $_SERVER['REQUEST_METHOD'] === 'GET') {
+//         wp_redirect(home_url(CUSTOM_LOGIN_SLUG));
+//         exit;
+//     }
+// }
+// add_action('init', 'redirect_login_page');
 
 // Handle new login URL
 function custom_login_page() 
