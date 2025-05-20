@@ -54,6 +54,7 @@ function custom_login_logo()
             background-position: center;
             background-repeat: no-repeat;
         }
+
         body.login div#login h1 a {
             background-image: url(<?php echo get_template_directory_uri(); ?>/images/login/dp_white.png) !important;
             width: auto;
