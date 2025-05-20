@@ -27,14 +27,14 @@ add_action('login_enqueue_scripts', 'custom_login_styles');
 // add_action('init', 'redirect_login_page');
 
 // Handle new login URL
-function custom_login_page() 
-{
-    if ($_SERVER['REQUEST_URI'] == '/' . CUSTOM_LOGIN_SLUG) {
-        require_once ABSPATH . 'wp-login.php';
-        exit();
-    }
-}
-add_action('init', 'custom_login_page');
+// function custom_login_page() 
+// {
+//     if ($_SERVER['REQUEST_URI'] == '/' . CUSTOM_LOGIN_SLUG) {
+//         require_once ABSPATH . 'wp-login.php';
+//         exit();
+//     }
+// }
+// add_action('init', 'custom_login_page');
 
 // Change login logo URL
 function custom_login_logo_url()
