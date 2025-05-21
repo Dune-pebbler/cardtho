@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
 body,
 #wpadminbar,
@@ -7,7 +7,7 @@ body,
 .wp-core-ui,
 input,
 textarea {
-  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "San Francisco",
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "San Francisco",
     "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 .row-title {
