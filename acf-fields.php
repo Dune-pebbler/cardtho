@@ -9,6 +9,7 @@ function remove_default_post_content_editor()
 }
 add_action('init', 'remove_default_post_content_editor');
 
+
 function get_global_settings_fields($layout_name)
 {
     return [
