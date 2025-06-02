@@ -83,8 +83,6 @@ $socials_bool = get_field('site_settings_socials_boolean');
           <div class="cross__line cross__line--2"></div>
         </div>
       </div>
-
-      hp
   </header>
 
   <main>
