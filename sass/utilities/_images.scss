@@ -10,7 +10,7 @@ picture > img {
 .cover-width img {
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height:100%;
 }
 .cover-height,
 .cover-height img {
@@ -52,4 +52,9 @@ picture > img {
   height: 100%;
   width: 100%;
   z-index: -1;
+}
+
+.img-container {
+  overflow: hidden;
+  border-radius: 16px;
 }

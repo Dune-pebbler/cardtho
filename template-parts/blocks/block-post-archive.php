@@ -13,12 +13,6 @@ $spacing_settings = get_sub_field('spacing_settings');
 $colors_settings = get_sub_field('colors_settings');
 $image_settings = get_sub_field('image_settings');
 
-// Build styles and classes
-$container_class = !$spacing_settings['content_width'] ? '' : 'container';
-$padding_top_style = !$spacing_settings['padding_top'] ? '' : 'padding-top:' . $spacing_settings['padding_top'] . 'px;';
-$padding_bottom_style = !$spacing_settings['padding_bottom'] ? '' : 'padding-bottom:' . $spacing_settings['padding_bottom'] . 'px;';
-$background_color_style = !$colors_settings['background_color'] ? '' : 'background-color:' . $colors_settings['background_color'];
-
 // Query posts
 $args = array(
     'post_type' => 'post',
@@ -27,19 +21,12 @@ $args = array(
 );
 $query = new WP_Query($args);
 
-// Set grid columns class
-$grid_class = 'md:grid-cols-2 lg:grid-cols-3'; // Default 3 columns
-if ($columns === '2') {
-    $grid_class = 'md:grid-cols-2';
-} elseif ($columns === '4') {
-    $grid_class = 'md:grid-cols-2 lg:grid-cols-4';
-}
 ?>
 
-<section class="block-post-archive" style="<?= $padding_top_style ?> <?= $padding_bottom_style ?> <?= $background_color_style ?>">
-    <div class="<?= $container_class ?>">
+<section class="block-post-archive">
+    <div class="container">
         <?php if ($query->have_posts()) : ?>
-            <div class="post-grid grid grid-cols-1 <?= $grid_class ?> gap-6">
+            <div class="post-grid grid grid-cols-1 gap-6">
                 <?php
                 while ($query->have_posts()) :
                     $query->the_post();

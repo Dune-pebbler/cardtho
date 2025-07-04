@@ -56,7 +56,7 @@ input {
 .acf-flexible-content .layout {
   box-shadow: 0 1px 20px 5px rgba(0, 0, 0, 0.04);
 }
-.acf-field-page-builder {
+.acf-field-page-builder, #acf-group_page_builder_consolidated{
   margin-top: 2em !important;
   padding: 0 !important;
 }
@@ -95,7 +95,7 @@ body.gform-admin {
   background-color: white;
 }
 
-#acf-group_page_builder {
+#acf-group_page_builder, #acf-group_page_builder_consolidated {
   border: 0px solid transparent !important;
 }
 #acf-group_page_builder .postbox-header {

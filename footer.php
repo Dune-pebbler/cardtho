@@ -13,7 +13,7 @@ $logo_long = get_field('site_settings_logo_long', 'option');
 <footer>
   <div class="footer-main container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-start">
     <?php if ($socials_bool &&  have_rows('socials_repeater', 'option')) : ?>
-      <div class="grouper">
+      <div class="grouper-logo">
         <div class="footer-logo mb-4">
           <?php if ($logo_long): ?>
             <img src="<?php echo esc_url($logo_long['url']); ?>" alt="<?php echo esc_attr($logo_long['alt']); ?>" />
@@ -40,8 +40,15 @@ $logo_long = get_field('site_settings_logo_long', 'option');
       </div>
     <?php endif; ?>
 
+    <?php if ($contact_content) : ?>
+      <div class="contact-info">
+        <?= $contact_content ?>
+      </div>
+    <?php endif; ?>
     <?php if ($footer_bool) : ?>
       <div class="footer-nav">
+        <h3>Menu</h3>
+
         <?php
         wp_nav_menu([
           'theme_location' => 'footer',
@@ -50,19 +57,13 @@ $logo_long = get_field('site_settings_logo_long', 'option');
         ?>
       </div>
     <?php endif; ?>
-
-    <?php if ($contact_content) : ?>
-      <div class="contact-info">
-        <?= $contact_content ?>
-      </div>
-    <?php endif; ?>
   </div>
 
-  <div class="bottom-footer container mx-auto px-4 grid grid-cols-1 items-start">
+  <div class="bottom-footer   px-4 grid grid-cols-1 items-start">
     <?php
     $year = date('Y'); // Get the current year
     $copyright_symbol = '&copy;'; // Copyright symbol
-    $company_name = get_bloginfo('name'); 
+    $company_name = get_bloginfo('name');
     $privacy_url = '/privacyverklaring';
     $website_name = 'Dune Pebbler';
     $website_url = 'https://dunepebbler.nl';

@@ -11,7 +11,7 @@ define('THEME_TD', sanitize_title(get_bloginfo("title")));
 include(get_template_directory() . '/custom-post-types.php');
 // include(get_template_directory() . '/custom-blocks.php');
 include(get_template_directory() . '/DP-login.php');
-include(get_template_directory() . '/acf-fields.php');
+// include(get_template_directory() . '/acf-fields.php');
 
 
 // include(get_template_directory() . '/shop-filter-ajax.php');

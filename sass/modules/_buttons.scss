@@ -1,35 +1,54 @@
 .btn,
 .btn-primary {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: var( --button-border-radius);
-  border:0px solid transparent;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  border: 0px solid transparent;
   cursor: pointer;
   font-size: 16px;
   font-weight: normal;
   text-align: center;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
-  background-color:  var(--button-primary-hover-color);
-  color: var(--button-primary-text-color);
+  background-color: var(--button-primary-color);
+  color: white;
+  font-weight: 600;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    z-index: -1;
+    background: #ffd9db;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+  }
   @media (max-width: $screen-md-max) {
     font-size: 18px;
   }
   &:hover {
     background-color: var(--button-primary-hover-color);
+    &:after {
+      width: 60%;
+      height: 60%;
+    }
   }
   a {
     color: var(--button-primary-text-color) !important;
+    text-decoration: none;
   }
 }
 .owl-button {
   cursor: pointer;
   &:hover {
-    background-color:  var(--button-primary-hover-color);
+    background-color: var(--button-primary-hover-color);
   }
 }
 .himary {
-  
 }
 .btn-secondary {
   @extend .btn;
@@ -43,10 +62,10 @@
   @extend .btn;
   background-color: transparent;
   border: 2px solid var(--button-outline-color);
-  color:  var(--button-outline-color);
+  color: var(--button-outline-color);
 
   &:hover {
-    background-color:  var(--button-outline-color);
+    background-color: var(--button-outline-color);
     color: var(--button-outline-text-color);
   }
 }

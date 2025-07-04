@@ -161,7 +161,9 @@
             "allow_null": 0,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_666043c8a8b6b",
@@ -597,84 +599,6 @@
             ]
         },
         {
-            "key": "field_665f147827148",
-            "label": "Afbeelding opties",
-            "name": "site_settings_images",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_665f14782714b",
-                    "label": "Afbeelding hoek afronding",
-                    "name": "site_settings_image_border_radius",
-                    "aria-label": "",
-                    "type": "range",
-                    "instructions": "Als deze waarde op 0 staat zijn de hoeken puntig, hoe hoger deze waarden hoe ronder de hoek.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "min": "",
-                    "max": 200,
-                    "step": "",
-                    "prepend": "",
-                    "append": ""
-                }
-            ]
-        },
-        {
-            "key": "field_66604de552887",
-            "label": "Button stijl",
-            "name": "site_settings_button_style",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "sub_fields": [
-                {
-                    "key": "field_66604de552888",
-                    "label": "Button hoek afronding",
-                    "name": "site_settings_button_border_radius",
-                    "aria-label": "",
-                    "type": "range",
-                    "instructions": "Als deze waarde op 0 staat zijn de hoeken puntig, hoe hoger deze waarden hoe ronder de hoek.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "33",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "min": "",
-                    "max": 40,
-                    "step": "",
-                    "prepend": "",
-                    "append": ""
-                }
-            ]
-        },
-        {
             "key": "field_66c71281fafb3",
             "label": "Google Tag manager",
             "name": "",
@@ -749,7 +673,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Nieuwe regel",
+            "button_label": "Nieuwe rij",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -814,6 +738,27 @@
             "placement": "top",
             "endpoint": 0,
             "selected": 0
+        },
+        {
+            "key": "field_6866310773fca",
+            "label": "Toon balk boven menu",
+            "name": "announcement_bool",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_66e1a0913e02c",
@@ -893,5 +838,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726067454
+    "modified": 1751617091
 }

@@ -8,7 +8,8 @@ SFTP live verbinding
 Proxy (live reload)
 1. Zorg dat browser sync globaal met de terminal command:     npm install -g browser-sync
 2. In bs-config verander de url naar de url van het ontikkel domein
-3. Open de live connectie en laat de temrinal open staan command in de terminal:     browser-sync start --config connection/bs-config.js
+3. Open de live connectie en laat de temrinal open staan command in de terminal:
+browser-sync start --config connection/bs-config.js
 
 Open de website via https://localhost:3000 
 

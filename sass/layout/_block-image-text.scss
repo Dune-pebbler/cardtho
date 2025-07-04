@@ -1,6 +1,6 @@
 section.block-image-text {
   .row {
-    &.imageLeft {
+    &.reverse {
       flex-direction: row-reverse;
     }
   }

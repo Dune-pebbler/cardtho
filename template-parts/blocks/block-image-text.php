@@ -5,31 +5,18 @@
  */
 
 //content fields
-$title = get_sub_field('image_text_content')['title'] ?? '';
-$content = get_sub_field('image_text_content')['content'] ?? '';
-$image = get_sub_field('image_text_image');
-$button = get_sub_field('image_text_button');
-$layout = get_sub_field('image_text_layout');
+$title = get_sub_field('afb_tekst_titel');
+$content = get_sub_field('afb_tekst_content');
+$image = get_sub_field('afb_tekst_afbeelding');
+$button = get_sub_field('afb_tekst_button');
+//true = tekst links
+$layout = get_sub_field('afb_layout');
 
-//globals 
-// Get settings from flexible content block
-$spacing_settings = get_sub_field('spacing_settings');
-$colors_settings = get_sub_field('colors_settings');
-$image_settings = get_sub_field('image_settings');
-
-// Build styles and classes
-$container_class = !$spacing_settings['content_width'] ? '' : 'container';
-$padding_top_style = !$spacing_settings['padding_top'] ? '' : 'padding-top:' . $spacing_settings['padding_top'] . 'px;';
-$padding_bottom_style = !$spacing_settings['padding_bottom'] ? '' : 'padding-bottom:' . $spacing_settings['padding_bottom'] . 'px;';
-$background_color_style = !$colors_settings['background_color'] ? '' : 'background-color:' . $colors_settings['background_color'];
-$lazy_load_attr = $image_settings['lazy_loading'] ? 'loading="lazy"' : '';
-$image_fit_class = $image_settings['image_fit'];
-$max_image_height = $image_settings['max_image_height'] ?: '';
 ?>
 
-<section class="block-image-text" style="<?= $padding_top_style ?> <?= $padding_bottom_style ?> <?= $background_color_style ?>">
-    <div class="<?= $container_class ?>">
-        <div class="row <?= $layout ?> flex-center">
+<section class="block-image-text">
+    <div class="container">
+        <div class="row flex-center <?= !$layout ? 'reverse' : ''?>">
             <div class="col-12 col-lg-5">
                 <div class="content-container">
                     <?php if ($title): ?>
@@ -49,9 +36,9 @@ $max_image_height = $image_settings['max_image_height'] ?: '';
             <?php if ($image): ?>
                 <div class="col-12 col-lg-6 relative">
                     <div data-animate="zoom-in" data-animate-delay="100" class="img-container">
-                        <img style="max-height:<?= $max_image_height ?>px"
-                            <?= $lazy_load_attr ?>
-                            class="<?= $image_fit_class ?>"
+                        <img
+                            loading="lazy"
+                            class="cover"
                             src="<?= esc_url($image['url']) ?>"
                             alt="<?= esc_attr($image['alt']) ?>" />
                     </div>

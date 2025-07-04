@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
   <title><?php the_title() ?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
-
+  <link rel="stylesheet" href="https://use.typekit.net/dfb3xvw.css">
   <?php wp_head(); ?>
 </head>
 
@@ -29,7 +26,7 @@ $socials_bool = get_field('site_settings_socials_boolean');
 
   <header class="main-header">
     <nav class="nav-main container mx-auto px-1 grid grid-cols-auto-1fr items-start">
-      <div class="nav-logo p-4">
+      <div class="nav-logo">
         <a class="nav-logo__link" href="/" title="Home">
           <?php if ($logo_long): ?>
             <img class="nav-logo__img long" src="<?php echo esc_url($logo_long['url']); ?>" alt="<?php echo esc_attr($logo_long['alt']); ?>" />

@@ -22,11 +22,7 @@ $title = $args['title'] ?? '';
 $description = $args['description'] ?? '';
 $image = $args['image'] ?? [];
 $link = $args['link'] ?? [];
-$show_button = $args['button'] ?? false;
-$image_fit = $args['image_fit'] ?? 'cover';
-$image_height = $args['image_height'] ?? '';
-
-$image_style = $image_height ? "max-height: {$image_height}px;" : '';
+$button = $args['button'] ?? false;
 ?>
 
 <a href="<?= esc_url($link['url']) ?>" class="card">
@@ -34,8 +30,7 @@ $image_style = $image_height ? "max-height: {$image_height}px;" : '';
         <img
             src="<?= esc_url($image['url']) ?>"
             alt="<?= esc_attr($image['alt']) ?>"
-            class="card__image <?= esc_attr($image_fit) ?>"
-            style="<?= $image_style ?>"
+            class="card__image contain"
             loading="lazy" />
     <?php endif; ?>
 
@@ -49,7 +44,7 @@ $image_style = $image_height ? "max-height: {$image_height}px;" : '';
         </div>
     <?php endif; ?>
 
-    <?php if ($show_button && $link['title']) : ?>
+    <?php if ($button) : ?>
         <div class="card__button">
             <span class="btn"><?= esc_html($link['title']) ?></span>
         </div>

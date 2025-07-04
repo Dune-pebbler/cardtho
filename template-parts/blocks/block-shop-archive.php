@@ -1,22 +1,16 @@
 <?php
+
 /**
  * Custom Shop Query Template with AJAX Category Filter
  */
 
-// Global variables (assuming you're still using Advanced Custom Fields)
-$spacing_group = get_field('globals_spacing_instellingen');
-$color_group = get_field('globals_kleuren_instellingen');
-$container_class = !empty($spacing_group['content_breedte']) ? 'container' : '';
-$padding_top_style = !empty($spacing_group['padding_top']) ? 'padding-top:' . $spacing_group['padding_top'] . 'px;' : '';
-$padding_bottom_style = !empty($spacing_group['padding_bottom']) ? 'padding-bottom:' . $spacing_group['padding_bottom'] . 'px;' : '';
-$background_color_style = !empty($color_group['achtergrond_kleur']) ? 'background-color:' . $color_group['achtergrond_kleur'] : '';
 
 // Get the current filter option
 $current_filter = isset($_GET['filter']) ? sanitize_text_field($_GET['filter']) : 'default';
 ?>
 
-<section class="custom-shop" style="<?= $padding_top_style ?> <?= $padding_bottom_style ?> <?= $background_color_style ?>">
-    <div class="<?= $container_class ?>">
+<section class="custom-shop">
+    <div class="container">
         <div class="row">
             <div class="col-12 col-lg-3">
                 <?php

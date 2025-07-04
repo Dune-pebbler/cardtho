@@ -1,5 +1,5 @@
 module.exports = {
-  proxy: "https://speelplaatsruben.dune-pebbler.nl/", // Vervang door ontwikkel url
+  proxy: "https://cardtho.local/", // Vervang door ontwikkel url
   files: ["**/*"],
   watchOptions: {
     ignoreInitial: false,
