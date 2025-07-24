@@ -1,27 +1,60 @@
 [data-animate] {
   opacity: 0;
   transform: translateZ(0);
-  transition-duration: 0.4s;
+  transition-duration: 1s;
   transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transition-property: opacity, transform;
+  z-index: auto;
 }
-[data-animate^="fade"].animate {
-  opacity: 1;
-  transform: translateZ(0);
-}
-[data-animate^="zoom"].animate {
-  opacity: 1;
-  transform: translateZ(0) scale(1);
-}
+
 [data-animate="fade-up"] {
-  transform: translate3d(0, 6px, 0);
+  transform: translate3d(0, 16px, 0);
   opacity: 0;
 }
+
 [data-animate="zoom-in"] {
   transform: scale(0.98);
   opacity: 0;
 }
 
+[data-animate="slide-in"] {
+  opacity: 1;
+  transform: translateX(-200px) translate(0, -50%) rotate(-90deg) !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-animate="slide-in-right"] {
+  opacity: 1;
+  transform: translateX(200px) translate(0, -50%) rotate(90deg) !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+[data-animate^="fade"].animate {
+  opacity: 1;
+  transform: translateZ(0);
+}
+
+[data-animate^="zoom"].animate {
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+}
+
+[data-animate="slide-in"].animate {
+  opacity: 1;
+  transform: translate(0, -50%) rotate(-90deg) !important;
+}
+
+[data-animate="slide-in-right"].animate {
+  opacity: 1;
+  transform: translate(0, -50%) rotate(90deg) !important;
+}
+
+[data-animate].animate:before,
+[data-animate].btn.animate:after {
+  opacity: 1;
+  transform: translate(-50%, -50%) !important;
+  z-index: -1;
+}
 
 [data-animate-delay="50"].animate {
   transition-delay: 50ms;
@@ -34,4 +67,37 @@
 }
 [data-animate-delay="200"].animate {
   transition-delay: 200ms;
+}
+[data-animate-delay="300"].animate {
+  transition-delay: 300ms;
+}
+[data-animate-delay="400"].animate {
+  transition-delay: 400ms;
+}
+[data-animate-delay="500"].animate {
+  transition-delay: 500ms;
+}
+[data-animate-delay="600"].animate {
+  transition-delay: 600ms;
+}
+[data-animate-delay="700"].animate {
+  transition-delay: 700ms;
+}
+[data-animate-delay="800"].animate {
+  transition-delay: 800ms;
+}
+[data-animate-delay="900"].animate {
+  transition-delay: 900ms;
+}
+[data-animate-delay="1000"].animate {
+  transition-delay: 1000ms;
+}
+[data-animate-delay="1100"].animate {
+  transition-delay: 1100ms;
+}
+[data-animate-delay="1200"].animate {
+  transition-delay: 1200ms;
+}
+[data-animate-delay="1300"].animate {
+  transition-delay: 1300ms;
 }

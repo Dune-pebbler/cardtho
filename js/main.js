@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {
   startOwlSlider();
   setHamburgerActiveToggle();
-  initMap();
+  // initMap();
   setParalaxScroll();
   setAnimations();
   setFaqOpen();
@@ -51,6 +51,9 @@ function startOwlSlider() {
     margin: 12,
     items: 1,
     loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    // dots:true,
   });
   jQuery(".owl-2").owlCarousel({
     dots: false,
@@ -161,10 +164,11 @@ function setAnimations() {
     "[data-animate^='fade'], [data-animate^='zoom']"
   );
 
-  inView("[data-animate^='fade']").on("enter", (el) => {
+  inView("[data-animate]").on("enter", (el) => {
     el.classList.add("animate");
   });
-  inView("[data-animate^='zoom']").on("enter", (el) => {
+
+  inView(".deco-img").on("enter", (el) => {
     el.classList.add("animate");
   });
 

@@ -1,6 +1,5 @@
 //overrides and shameful practices that cannot stand the light of day
 
-
 //owl overrides
 .owl-stage-outer,
 .owl-stage,
@@ -16,14 +15,18 @@
     top: 50%;
     transform: translate(0%, -50%);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 3px 12px 9px 12px !important;
     span {
       font-size: 28px;
     }
+    &:after {
+      display: none!important;
+    }
   }
   .owl-prev {
-    left: 0%;
+    left: -12px;
   }
   .owl-next {
-    right: 0%;
+    right: -12px;
   }
 }

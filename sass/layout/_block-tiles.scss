@@ -1,0 +1,14 @@
+section.block-tiles {
+  background-color: rgb(247, 247, 247);
+  padding: 4em 0;
+  .tile-title {
+    text-align: center;
+    color: rgb(73, 73, 73);
+    width: 100%;
+  }
+}
+section.block-hero + section.block-tiles {
+  background-color: transparent;
+  padding: unset;
+}
+ 

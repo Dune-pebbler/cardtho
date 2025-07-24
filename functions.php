@@ -100,6 +100,7 @@ function theme_enqueue_scripts()
 }
 
 
+add_action( 'woocommerce_after_shop_loop', 'add_woocommerce_pagination', 10 );
 
 function my_custom_admin_styles()
 {

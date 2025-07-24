@@ -7,12 +7,29 @@ $socials_bool = get_field('site_settings_footer_socials_bool', 'option');
 
 $logo_primary = get_field('site_settings_logo_primary', 'option');
 $logo_long = get_field('site_settings_logo_long', 'option');
-?>
-</main>
 
+$footer_form = get_field('site_settings_footer_form', 'option');
+?>
+
+<section class="footer-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6"></div>
+      <div class="col-12 col-lg-6">
+        <div class="form-container">
+          <?= do_shortcode($footer_form); ?>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
 <footer>
+
   <div class="footer-main container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-start">
-    <?php if ($socials_bool &&  have_rows('socials_repeater', 'option')) : ?>
+    <!-- <?php if ($socials_bool &&  have_rows('socials_repeater', 'option')) : ?>
       <div class="grouper-logo">
         <div class="footer-logo mb-4">
           <?php if ($logo_long): ?>
@@ -38,13 +55,10 @@ $logo_long = get_field('site_settings_logo_long', 'option');
           <?php endwhile; ?>
         </div>
       </div>
-    <?php endif; ?>
+    <?php endif; ?> -->
 
-    <?php if ($contact_content) : ?>
-      <div class="contact-info">
-        <?= $contact_content ?>
-      </div>
-    <?php endif; ?>
+
+
     <?php if ($footer_bool) : ?>
       <div class="footer-nav">
         <h3>Menu</h3>
@@ -57,6 +71,12 @@ $logo_long = get_field('site_settings_logo_long', 'option');
         ?>
       </div>
     <?php endif; ?>
+    <?php if ($contact_content) : ?>
+      <div class="contact-info">
+        <?= $contact_content ?>
+      </div>
+    <?php endif; ?>
+
   </div>
 
   <div class="bottom-footer   px-4 grid grid-cols-1 items-start">

@@ -7,6 +7,7 @@
 
 // Get the current filter option
 $current_filter = isset($_GET['filter']) ? sanitize_text_field($_GET['filter']) : 'default';
+$i = 3;
 ?>
 
 <section class="custom-shop">

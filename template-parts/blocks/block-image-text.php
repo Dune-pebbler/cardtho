@@ -11,12 +11,13 @@ $image = get_sub_field('afb_tekst_afbeelding');
 $button = get_sub_field('afb_tekst_button');
 //true = tekst links
 $layout = get_sub_field('afb_layout');
+$deco = get_sub_field('afb_deco');
 
 ?>
 
-<section class="block-image-text">
+<section class="block-image-text has-padding">
     <div class="container">
-        <div class="row flex-center <?= !$layout ? 'reverse' : ''?>">
+        <div class="row flex-center <?= !$layout ? 'reverse' : '' ?>">
             <div class="col-12 col-lg-5">
                 <div class="content-container">
                     <?php if ($title): ?>
@@ -35,15 +36,20 @@ $layout = get_sub_field('afb_layout');
             <div class="col-lg-1"></div>
             <?php if ($image): ?>
                 <div class="col-12 col-lg-6 relative">
-                    <div data-animate="zoom-in" data-animate-delay="100" class="img-container">
-                        <img
-                            loading="lazy"
-                            class="cover"
-                            src="<?= esc_url($image['url']) ?>"
-                            alt="<?= esc_attr($image['alt']) ?>" />
-                    </div>
+                    <?php if ($deco): ?>
+                        <div class="img-container deco-img">
+                    <?php else: ?>
+                        <div data-animate="zoom-in" data-animate-delay="100" class="img-container">
+                    <?php endif; ?>
+
+                            <img
+                                loading="lazy"
+                                class="contain"
+                                src="<?= esc_url($image['url']) ?>"
+                                alt="<?= esc_attr($image['alt']) ?>" />
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
-            <?php endif; ?>
         </div>
-    </div>
 </section>

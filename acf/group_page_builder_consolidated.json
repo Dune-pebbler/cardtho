@@ -8,7 +8,7 @@
             "name": "content_blocks",
             "aria-label": "",
             "type": "flexible_content",
-            "instructions": "Add and organize content blocks to build your page.",
+            "instructions": "Voeg blokken toe en versleep ze om je pagina op te bouwen",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -638,7 +638,7 @@
                 "layout_post_archive": {
                     "key": "layout_post_archive",
                     "name": "post_archive",
-                    "label": "Post archive",
+                    "label": "Producten archief",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -662,6 +662,32 @@
                             "placeholder": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_686e3ca5dfbc9",
+                            "label": "Productgroep",
+                            "name": "productgroep",
+                            "aria-label": "",
+                            "type": "taxonomy",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "product-groep",
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "object",
+                            "field_type": "checkbox",
+                            "allow_in_bindings": 0,
+                            "bidirectional": 0,
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "bidirectional_target": []
                         }
                     ],
                     "min": "",
@@ -820,6 +846,27 @@
                             "ui_on_text": "Tekst links",
                             "ui_off_text": "Tekst rechts",
                             "ui": 1
+                        },
+                        {
+                            "key": "field_686bc63c57711",
+                            "label": "Afbeedling decoratie",
+                            "name": "afb_deco",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui_on_text": "Aan",
+                            "ui_off_text": "Uit",
+                            "ui": 1
                         }
                     ],
                     "min": "",
@@ -831,6 +878,27 @@
                     "label": "Tiles",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_6878a8585e223",
+                            "label": "Titel",
+                            "name": "tiles_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
                         {
                             "key": "field_66ead736cd126",
                             "label": "Kaarten",
@@ -969,5 +1037,5 @@
     "active": true,
     "description": "Main page builder for creating flexible page layouts.",
     "show_in_rest": 0,
-    "modified": 1751616630
+    "modified": 1753082834
 }

@@ -3,15 +3,23 @@ header.main-header {
   top: 0;
   background-color: $white;
   z-index: 100;
-  // border-bottom: 1px solid rgb(243, 243, 243);
   * {
     font-family: $font1;
   }
   @media (max-width: $screen-md-max) {
     box-shadow: none;
   }
+  .announcement-bar {
+    * {
+      margin:0!important;
+      padding:4px 0;
+      color:white;
+      text-decoration: none;
+    }
+    text-align: center;
+  }
   .nav-logo {
-    padding:12px;
+    padding: 12px;
     &__link {
     }
     &__img {
@@ -20,6 +28,7 @@ header.main-header {
   }
   .nav-menu {
     display: flex;
+    padding-right: 1em;
     @media (max-width: $screen-md-max) {
       display: none;
       position: fixed;
@@ -55,12 +64,12 @@ header.main-header {
         &:hover {
           cursor: pointer;
           a:not(.sub-menu a) {
-            color: var(--link-color)
+            color: var(--link-color);
           }
           .sub-menu {
             display: flex;
             a:hover {
-              color: var(--link-color)
+              color: var(--link-color);
             }
           }
           &:after {

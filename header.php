@@ -18,13 +18,23 @@ $buttonVariant = get_field('site_settings_button_var', 'option');
 
 $logo_primary = get_field('site_settings_logo_primary', 'option');
 $logo_long = get_field('site_settings_logo_long', 'option');
-
 $socials_bool = get_field('site_settings_socials_boolean');
+
+#banner
+$banner_bool = get_field('announcement_bool', 'option');
+$banner_bg = get_field('announcement_achtergrond_kleur', 'option');
+// $banner_text = get_field('announcement_tekst_kleur', 'option');
+$banner_content = get_field('announcement_inhoud_bericht', 'option');
 ?>
 
 <body <?php body_class() ?>>
 
   <header class="main-header">
+    <?php if ($banner_bool): ?>
+      <div class="announcement-bar" style="background: <?=$banner_bg?>;">
+        <?= $banner_content ?>
+      </div>
+    <?php endif; ?>
     <nav class="nav-main container mx-auto px-1 grid grid-cols-auto-1fr items-start">
       <div class="nav-logo">
         <a class="nav-logo__link" href="/" title="Home">

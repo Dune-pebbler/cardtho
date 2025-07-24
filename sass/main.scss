@@ -22,6 +22,8 @@
 @import "layout/block-faq";
 @import "layout/block-logo-slider";
 @import "layout/block-masonry";
+@import "layout/block-tiles";
+@import "layout/block-post-archive";
 
 // modules
 @import "modules/buttons";
@@ -31,11 +33,11 @@
 @import "modules/header";
 @import "modules/socials";
 @import "modules/card";
-
-//woocommerce
+@import "modules/footer-form";
 
 // pages
 @import "pages/404";
+@import "pages/single-product";
 
 // utilities
 @import "utilities/flexboxv2";
@@ -46,7 +48,7 @@
 @import "utilities/general";
 @import "utilities/images";
 @import "utilities/blocksettings";
-
+@import "utilities/icons";
 
 // shame
 // @import "woocommerce-overrides";

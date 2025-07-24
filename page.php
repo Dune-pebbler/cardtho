@@ -1,26 +1,31 @@
-<?php get_header();?>
+<?php get_header();
 
-<?php the_content(); ?>
+if (have_rows('content_blocks')):
+    while (have_rows('content_blocks')) : the_row();
+        $layout = get_row_layout();
 
+        switch ($layout) {
+            case 'hero':
+                get_template_part('template-parts/blocks/block', 'hero');
+                break;
 
-<?php get_footer();?>
+            case 'tekst':
+                get_template_part('template-parts/blocks/block', 'single-text');
+                break;
 
-<!-- // if (have_rows('content_blocks')):
-//     while (have_rows('content_blocks')) : the_row();
-//         $layout = get_row_layout();
+            case 'post_archive':
+                get_template_part('template-parts/blocks/block', 'post-archive');
+                break;
 
-//         switch ($layout) {
-//             case 'hero':
-//                 get_template_part('template-parts/blocks/block', 'hero');
-//                 break;
+            case 'tiles':
+                get_template_part('template-parts/blocks/block', 'tiles');
+                break;
 
-//             case 'text':
-//                 get_template_part('template-parts/blocks/block', 'single-text');
-//                 break;
+            case 'tekst_met_afbeelding':
+                get_template_part('template-parts/blocks/block', 'image-text');
+                break;
+        }
+    endwhile;
+endif;
 
-//             case 'post_archive':
-//                 get_template_part('template-parts/blocks/block', 'post-archive');
-//                 break;
-//         }
-//     endwhile;
-// endif; -->
+get_footer();
