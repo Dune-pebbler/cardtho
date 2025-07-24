@@ -1167,6 +1167,10 @@ header.main-header .hamburger-cross .cross__line--2 {
   display: none !important;
 }
 
+.related-posts {
+  margin-bottom: 4em;
+}
+
 section.error-404 {
   padding: 5em 0;
   border-radius: 4px;

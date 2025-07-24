@@ -44,14 +44,16 @@ $gallery_images = get_field('product_afbeeldingen');
                         </div>
                     </div>
                 <?php endif; ?>
-
-                <div class="col-12 col-lg-6">
+                <div class="col-lg-1"></div>
+                <div class="col-12 col-lg-5">
                     <?php
                     if (has_post_thumbnail() && empty($gallery_images)) {
                         the_post_thumbnail('large');
                     }
                     ?>
                     <?= the_content(); ?>
+                    <a href="https://cardthostore.com/product/<?= get_post_field('post_name') ?>" target="_blank" class="btn">Bekijk in winkel</a>
+
                 </div>
             </div>
         </div>
@@ -82,7 +84,11 @@ $gallery_images = get_field('product_afbeeldingen');
             </div>
         </div>
     </div>
-    </div>
-
 </section>
+
+<?php
+// Load related posts
+get_template_part('template-parts/related-posts');
+?>
+
 <?php get_footer(); ?>

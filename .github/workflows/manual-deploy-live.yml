@@ -1,54 +1,38 @@
-<<<<<<< HEAD
-name: Manual FTP Deploy
+# name: Deploy changes to live website
 
-on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: 'Deployment environment'
-        required: true
-        default: 'staging'
-        type: choice
-        options:
-        - staging
-        - production
-=======
-name: Deploy changes to live website
+# on:
+#   workflow_dispatch:
 
-on:
-  workflow_dispatch:
->>>>>>> b6a2bab37df6b091c202abb9ea8dcf97bc7c29ba
-
-jobs:
-  ftp-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+# jobs:
+#   ftp-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
       
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-<<<<<<< HEAD
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./
-          server-dir: /public_html/speelplaatsruben/wp-content/themes/skelet-theme/
-=======
-          server: ${{ secrets.LIVE_SERVER }}
-          username: ${{ secrets.LIVE_USERNAME }}
-          password: ${{ secrets.LIVE_PASSWORD }}
-          local-dir: ./
-          server-dir:  ${{ secrets.LIVE_SERVER_DIR }}
->>>>>>> b6a2bab37df6b091c202abb9ea8dcf97bc7c29ba
-          protocol: ftp
-          port: 21
-          security: loose
-          timeout: 180000
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            github-deploy-key
-            github-deploy-key.pub
-            .github/**
+#       - name: FTP Deploy
+#         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+#         with:
+# <<<<<<< HEAD
+#           server: ${{ secrets.FTP_SERVER }}
+#           username: ${{ secrets.FTP_USERNAME }}
+#           password: ${{ secrets.FTP_PASSWORD }}
+#           local-dir: ./
+#           server-dir: /public_html/speelplaatsruben/wp-content/themes/skelet-theme/
+# =======
+#           server: ${{ secrets.LIVE_SERVER }}
+#           username: ${{ secrets.LIVE_USERNAME }}
+#           password: ${{ secrets.LIVE_PASSWORD }}
+#           local-dir: ./
+#           server-dir:  ${{ secrets.LIVE_SERVER_DIR }}
+# >>>>>>> b6a2bab37df6b091c202abb9ea8dcf97bc7c29ba
+#           protocol: ftp
+#           port: 21
+#           security: loose
+#           timeout: 180000
+#           exclude: |
+#             **/.git*
+#             **/.git*/**
+#             **/node_modules/**
+#             github-deploy-key
+#             github-deploy-key.pub
+#             .github/**

@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-name: FTP Deploy
+name: Automatic FTP Ontwikkel on push
 
 on:
   push:
-    branches: [ main ]  # Change to your main branch name if different
-
+    branches: [ main ]  
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
@@ -14,15 +12,15 @@ jobs:
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.ONTWIKKEL_SERVER }}
+          username: ${{ secrets.ONTWIKKEL_USERNAME }}
+          password: ${{ secrets.ONTWIKKEL_PASSWORD }}
           local-dir: ./
-          server-dir: /public_html/speelplaatsruben/wp-content/themes/skelet-theme/
-          protocol: ftp  # Plain FTP as shown in your FileZilla
-          port: 21  # Standard FTP port
-          security: loose  # For insecure plain FTP
-          timeout: 180000  # 3 minutes timeout
+          server-dir:  ${{ secrets.ONTWIKKEL_SERVER_DIR }}
+          protocol: ftp  # Plain FTP 
+          port: 21 
+          security: loose 
+          timeout: 180000 
           exclude: |
             **/.git*
             **/.git*/**
@@ -30,36 +28,3 @@ jobs:
             github-deploy-key
             github-deploy-key.pub
             .github/**
-=======
-# name: Automatic FTP Ontwikkel on push
-
-# on:
-#   push:
-#     branches: [ main ]  # Change to your main branch name if different
-
-# jobs:
-#   ftp-deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-      
-#       - name: FTP Deploy
-#         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-#         with:
-#           server: ${{ secrets.ONTWIKKEL_SERVER }}
-#           username: ${{ secrets.ONTWIKKEL_USERNAME }}
-#           password: ${{ secrets.ONTWIKKEL_PASSWORD }}
-#           local-dir: ./
-#           server-dir:  ${{ secrets.ONTWIKKEL_SERVER_DIR }}
-#           protocol: ftp  # Plain FTP 
-#           port: 21 
-#           security: loose 
-#           timeout: 180000 
-#           exclude: |
-#             **/.git*
-#             **/.git*/**
-#             **/node_modules/**
-#             github-deploy-key
-#             github-deploy-key.pub
-#             .github/**
->>>>>>> b6a2bab37df6b091c202abb9ea8dcf97bc7c29ba
