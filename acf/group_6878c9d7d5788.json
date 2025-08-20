@@ -3,6 +3,27 @@
     "title": "Productinformatie",
     "fields": [
         {
+            "key": "field_6878c9ece6b26",
+            "label": "Anker Link",
+            "name": "anchor_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Voeg een anker link toe die naar een specifiek element op de pagina verwijst. Voeg     id=\"anchor\"    toe aan een html tag om de link hier naartoe te verwijzen.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Bijvoorbeeld: Meer informatie",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6878ca65572ab",
             "label": "Titel",
             "name": "title",

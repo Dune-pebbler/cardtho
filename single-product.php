@@ -5,6 +5,8 @@ $paragraph = get_field('paragraph');
 $title_2 = get_field('title_2');
 $paragraph_2 = get_field('paragraph_2');
 
+$anchor_link = get_field('anchor_link');
+
 $gallery_images = get_field('product_afbeeldingen');
 
 ?>
@@ -24,7 +26,6 @@ $gallery_images = get_field('product_afbeeldingen');
                 <?php if ($gallery_images): ?>
                     <div class="col-12 col-lg-6">
                         <div class="main-image">
-                            <!-- Main Product Image Slider -->
                             <div class="owl-carousel owl-1 product-image-slider">
                                 <?php foreach ($gallery_images as $image): ?>
                                     <div class="item">
@@ -46,13 +47,13 @@ $gallery_images = get_field('product_afbeeldingen');
                 <?php endif; ?>
                 <div class="col-lg-1"></div>
                 <div class="col-12 col-lg-5">
-                    <?php
-                    if (has_post_thumbnail() && empty($gallery_images)) {
-                        the_post_thumbnail('large');
-                    }
-                    ?>
                     <?= the_content(); ?>
-                    <a href="https://cardthostore.com/product/<?= get_post_field('post_name') ?>" target="_blank" class="btn">Bekijk in winkel</a>
+                    <div class="product-buttons">
+                        <a href="https://cardthostore.nl/product/<?= get_post_field('post_name') ?>" target="_blank" class="btn">Kopen</a>
+                        <?php if ($anchor_link): ?>
+                            <a href="#anchor" class="btn btn-secondary"><?= esc_html($anchor_link); ?></a>
+                        <?php endif; ?>
+                    </div>
 
                 </div>
             </div>

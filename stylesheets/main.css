@@ -1229,6 +1229,35 @@ section.single-product .product-container {
   overflow: hidden;
   border-radius: 24px;
 }
+section.single-product .product-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+section.single-product .product-buttons .btn, section.single-product .product-buttons .owl-nav .owl-prev, .owl-nav section.single-product .product-buttons .owl-prev,
+section.single-product .product-buttons .owl-nav .owl-next,
+.owl-nav section.single-product .product-buttons .owl-next, section.single-product .product-buttons .btn-secondary, section.single-product .product-buttons .btn-outline {
+  flex: 1;
+  text-align: center;
+}
+section.single-product .product-buttons .btn.btn-secondary, section.single-product .product-buttons .btn-secondary {
+  background-color: var(--secondary-color, #6c757d);
+  border-color: var(--secondary-color, #6c757d);
+}
+section.single-product .product-buttons .btn.btn-secondary:hover, section.single-product .product-buttons .btn-secondary:hover {
+  background-color: var(--secondary-color-hover, #5a6268);
+  border-color: var(--secondary-color-hover, #5a6268);
+}
+@media (max-width: 768px) {
+  section.single-product .product-buttons {
+    flex-direction: column;
+  }
+  section.single-product .product-buttons .btn, section.single-product .product-buttons .owl-nav .owl-prev, .owl-nav section.single-product .product-buttons .owl-prev,
+  section.single-product .product-buttons .owl-nav .owl-next,
+  .owl-nav section.single-product .product-buttons .owl-next, section.single-product .product-buttons .btn-secondary, section.single-product .product-buttons .btn-outline {
+    flex: none;
+  }
+}
 section.single-product .arrow-bg {
   position: relative;
   margin-top: 2.5em;
