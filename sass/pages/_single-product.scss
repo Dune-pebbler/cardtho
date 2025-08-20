@@ -8,7 +8,7 @@ section.single-product {
     justify-content: center;
     align-items: center;
     border: 1px solid rgb(241, 237, 237);
-
+    overflow: hidden;
     a {
       width: 100%;
       img {
@@ -25,7 +25,6 @@ section.single-product {
   .arrow-bg {
     position: relative;
     margin-top: 2.5em;
-
     .arrow-1 {
       position: absolute;
       content: "";

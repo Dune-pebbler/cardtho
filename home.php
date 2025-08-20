@@ -3,8 +3,8 @@
 <section class="news-archive">
     <div class="container mx-auto px-4">
         <div class="news-archive__header">
-            <h1 class="news-archive__title">Zoekresultaten voor: '<?php echo get_search_query(); ?>'</h1>
-            <p class="news-archive__subtitle"><?php echo $wp_query->found_posts; ?> resultaten gevonden</p>
+            <h1 class="news-archive__title">Nieuws</h1>
+            <p class="news-archive__subtitle">Blijf op de hoogte van het laatste nieuws</p>
             
             <!-- Search Form -->
             <div class="news-archive__search">
@@ -40,36 +40,19 @@
                                         <time class="news-card__date" datetime="<?php echo get_the_date('c'); ?>">
                                             <?php echo get_the_date('d F Y'); ?>
                                         </time>
-                                        <?php 
-                                        $categories = get_the_category();
-                                        if (!empty($categories) && $categories[0]->name !== 'Geen categorie') : ?>
-                                            <span class="news-card__category">
-                                                <?php echo esc_html($categories[0]->name); ?>
-                                            </span>
-                                        <?php endif; ?>
-                                        
-                                        <?php 
-                                        $post_type = get_post_type();
-                                        if ($post_type !== 'post') : 
-                                            $post_type_obj = get_post_type_object($post_type);
-                                            $post_type_name = $post_type_obj ? $post_type_obj->labels->singular_name : ucfirst($post_type);
-                                        ?>
-                                            <span class="news-card__post-type">
-                                                <?php echo esc_html($post_type_name); ?>
-                                            </span>
-                                        <?php endif; ?>
+                                                                <?php 
+                        $categories = get_the_category();
+                        if (!empty($categories) && $categories[0]->name !== 'Geen categorie') : ?>
+                            <span class="news-card__category">
+                                <?php echo esc_html($categories[0]->name); ?>
+                            </span>
+                        <?php endif; ?>
                                     </div>
                                     
                                     <h2 class="news-card__title"><?php the_title(); ?></h2>
                                     
                                     <div class="news-card__excerpt">
-                                        <?php 
-                                        if (get_field('intro')) {
-                                            echo wp_trim_words(get_field('intro'), 20, '...');
-                                        } else {
-                                            echo wp_trim_words(get_the_excerpt(), 20, '...');
-                                        }
-                                        ?>
+                                        <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
                                     </div>
                                     
                                     <span class="news-card__read-more">Lees meer</span>
@@ -93,8 +76,8 @@
 
             <?php else : ?>
                 <div class="news-archive__no-posts">
-                    <h2>Geen resultaten gevonden</h2>
-                    <p>Er zijn geen resultaten gevonden voor uw zoekopdracht. Probeer andere zoektermen.</p>
+                    <h2>Geen berichten gevonden</h2>
+                    <p>Er zijn momenteel geen nieuwsberichten beschikbaar.</p>
                 </div>
             <?php endif; ?>
         </div>

@@ -85,6 +85,30 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_6878c9ece6b25",
+            "label": "Gerelateerde producten",
+            "name": "manual_related_products",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Selecteer specifieke gerelateerde producten. Indien leeg, worden automatisch gerelateerde producten getoond op basis van productcategorie.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "ui": 1
         }
     ],
     "location": [
