@@ -27,6 +27,7 @@ $i = 5;
                             'image' => get_sub_field('kaart_afbeelding'),
                             'link' => get_sub_field('kaart_link'),
                             'button' => get_sub_field('kaart_button'),
+                            'location' => get_sub_field('kaart_locatie'),
                         ];
                         get_template_part('template-parts/card', null, $card_args);
                         ?>

@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {
   startOwlSlider();
   setHamburgerActiveToggle();
-  // initMap();
+  initMap();
   setParalaxScroll();
   setAnimations();
   setFaqOpen();
@@ -100,33 +100,57 @@ function startOwlSlider() {
 }
 
 async function initMap() {
-  const mapElement = document.getElementById("map");
-  if (!mapElement) {
+  // Find all map elements (both main maps and card maps)
+  const mapElements = document.querySelectorAll("[id^='map'], .google-map");
+  
+  if (mapElements.length === 0) {
     return;
   }
-  const zoom = parseInt(mapElement.getAttribute("data-zoom"));
-  const lat = parseFloat(mapElement.getAttribute("data-lat"));
-  const lng = parseFloat(mapElement.getAttribute("data-lng"));
 
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
     "marker"
   );
-  const map = new Map(document.getElementById("map"), {
-    center: { lat, lng },
-    zoom: zoom,
-    mapId: "4504f8b37365c3d0",
-  });
 
-  const logoMarkerUrl = document.createElement("img");
-  if (document.getElementById("logo-marker").src)
-    logoMarkerUrl.src = document.getElementById("logo-marker").src;
+  // Initialize each map
+  mapElements.forEach(async (mapElement) => {
+    const zoom = parseInt(mapElement.getAttribute("data-zoom")) || 15;
+    const lat = parseFloat(mapElement.getAttribute("data-lat"));
+    const lng = parseFloat(mapElement.getAttribute("data-lng"));
 
-  const marker = new google.maps.marker.AdvancedMarkerElement({
-    map,
-    position: { lat, lng },
-    content: logoMarkerUrl,
+    if (!lat || !lng) {
+      return;
+    }
+
+    const map = new Map(mapElement, {
+      center: { lat, lng },
+      zoom: zoom,
+      mapId: "4504f8b37365c3d0",
+    });
+
+    // Look for custom marker for this specific map
+    const mapId = mapElement.id;
+    const logoMarkerElement = document.querySelector(`[data-map-id="${mapId}"]`) || document.getElementById("logo-marker");
+    
+    if (logoMarkerElement && logoMarkerElement.src) {
+      const logoMarkerUrl = document.createElement("img");
+      logoMarkerUrl.src = logoMarkerElement.src;
+      logoMarkerUrl.style.width = "32px";
+      logoMarkerUrl.style.height = "32px";
+
+      const marker = new google.maps.marker.AdvancedMarkerElement({
+        map,
+        position: { lat, lng },
+        content: logoMarkerUrl,
+      });
+    } else {
+      // Use default marker if no custom marker is found
+      const marker = new google.maps.marker.AdvancedMarkerElement({
+        map,
+        position: { lat, lng },
+      });
+    }
   });
 }
 

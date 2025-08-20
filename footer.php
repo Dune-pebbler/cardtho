@@ -16,7 +16,7 @@ $footer_form = get_field('site_settings_footer_form', 'option');
     <div class="row">
       <div class="col-lg-6"></div>
       <div class="col-12 col-lg-6">
-        <div class="form-container">
+        <div class="form-container" data-animate="fade-up">
           <?= do_shortcode($footer_form); ?>
         </div>
 

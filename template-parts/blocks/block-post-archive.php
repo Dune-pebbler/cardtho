@@ -6,8 +6,7 @@
 $posts_per_page = get_sub_field('maximum_aantal_posts') ?: 12;
 $productgroep = get_sub_field('productgroep');
 $featured_products = get_sub_field('featured_products') ?: [];
-$bestelbare_counter = 3;
-$eol_counter = 3;
+$animation_counter = 0; // Single counter for smooth waterfall effect
 $eol_intro = get_sub_field('end_of_line_printers_intro');
 
 // Get current page for bestelbare products
@@ -161,10 +160,10 @@ wp_reset_postdata();
                         'button' => true,
                         'is_orderable' => $is_orderable,
                     ); ?>
-                    <div class="col-12 col-lg-4 col-xl-3" data-animate="fade-up" data-animate-delay="<?= $bestelbare_counter * 100 ?>">
+                    <div class="col-12 col-lg-4 col-xl-3" data-animate="fade-up" data-animate-delay="<?= $animation_counter * 150 ?>">
                         <?php get_template_part('template-parts/card', null, $post_args); ?>
                     </div>
-                    <?php $bestelbare_counter++; ?>
+                    <?php $animation_counter++; ?>
                 <?php endforeach; ?>
             </div>
 
@@ -214,10 +213,10 @@ wp_reset_postdata();
                             'button' => true,
                             'is_orderable' => $is_orderable,
                         ); ?>
-                        <div class="col-12 col-lg-4 col-xl-3" data-animate="fade-up" data-animate-delay="<?= $eol_counter * 100 ?>">
+                        <div class="col-12 col-lg-4 col-xl-3" data-animate="fade-up" data-animate-delay="<?= $animation_counter * 150 ?>">
                             <?php get_template_part('template-parts/card', null, $post_args); ?>
                         </div>
-                        <?php $eol_counter++; ?>
+                        <?php $animation_counter++; ?>
                     <?php endforeach; ?>
                 </div>
 

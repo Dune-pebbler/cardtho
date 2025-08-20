@@ -11,6 +11,7 @@
  * @type bool   $button      Whether to show a button
  * @type string $image_fit   The image fit class (e.g., 'cover' or 'contain')
  * @type string $image_height The max image height (e.g., '200px')
+ * @type array  $location    The location array with 'lat', 'lng', 'zoom', 'address'
  * }
  */
 
@@ -23,12 +24,16 @@ $description = $args['description'] ?? '';
 $image = $args['image'] ?? [];
 $link = $args['link'] ?? [];
 $button = $args['button'] ?? false;
+$location = $args['location'] ?? [];
 
 $image_fit = $args['image_fit'] ?? 'contain';
 $image_height = $args['image_height'] ?? '';
 
 $is_orderable = $args['is_orderable'] ?? true;
 $is_orderable_class = !$is_orderable ? 'not-orderable' : '';
+
+// Check if we should show a map instead of an image
+$show_map = !empty($location) && !empty($location['lat']) && !empty($location['lng']);
 
 // turn desc into an excerpt
 $description = wp_trim_words($description, 10, '...');
@@ -38,7 +43,19 @@ $description = wp_trim_words($description, 10, '...');
     <?php if ($title) : ?>
         <h3 class="card__title"><?= esc_html($title) ?></h3>
     <?php endif; ?>
-    <?php if ($image && $image['url']) : ?>
+    
+    <?php if ($show_map) : ?>
+        <div class="card__map">
+            <?php
+            $map_args = [
+                'location' => $location,
+                'marker_bool' => false, // For cards, we'll use a simple marker
+                'marker' => []
+            ];
+            get_template_part('template-parts/google-map', null, $map_args);
+            ?>
+        </div>
+    <?php elseif ($image && $image['url']) : ?>
         <img
             src="<?= esc_url($image['url']) ?>"
             alt="<?= esc_attr($image['alt']) ?>"

@@ -21,9 +21,19 @@ if (have_rows('content_blocks')):
                 get_template_part('template-parts/blocks/block', 'tiles');
                 break;
 
+            case 'kaart':
+                get_template_part('template-parts/blocks/block', 'map');
+                break;
+
             case 'tekst_met_afbeelding':
                 get_template_part('template-parts/blocks/block', 'image-text');
                 break;
+
+            case 'form':
+                get_template_part('template-parts/blocks/block', 'form');
+                break;
+
+                
         }
     endwhile;
 endif;
