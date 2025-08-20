@@ -197,6 +197,18 @@
   transition-delay: 1300ms;
 }
 
+[data-animate-delay="1400"].animate {
+  transition-delay: 1400ms;
+}
+
+[data-animate-delay="1500"].animate {
+  transition-delay: 1500ms;
+}
+
+[data-animate-delay="1600"].animate {
+  transition-delay: 1600ms;
+}
+
 h1,
 h2,
 h3,
@@ -731,6 +743,23 @@ section.block-post-archive {
   margin-top: 2em;
   padding: 2em 0;
   background-color: rgb(247, 247, 247);
+}
+section.block-post-archive .pagination {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+section.block-post-archive .pagination * {
+  text-decoration: none;
+}
+section.block-post-archive .pagination .next, section.block-post-archive .pagination .prev {
+  padding-left: 6px;
+  padding-right: 6px;
+  border: 1px solid #f5333f;
+  border-radius: 4px;
+  color: #f5333f;
 }
 
 .btn, .owl-nav .owl-prev,

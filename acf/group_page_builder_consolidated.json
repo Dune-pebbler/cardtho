@@ -688,6 +688,37 @@
                             "multiple": 0,
                             "allow_null": 0,
                             "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_68a579139a22f",
+                            "label": "Uitgelichte producten",
+                            "name": "featured_products",
+                            "aria-label": "",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "post_status": "",
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "taxonomy"
+                            ],
+                            "return_format": "object",
+                            "min": "",
+                            "max": "",
+                            "allow_in_bindings": 0,
+                            "elements": "",
+                            "bidirectional": 0,
+                            "bidirectional_target": []
                         }
                     ],
                     "min": "",
@@ -1037,5 +1068,5 @@
     "active": true,
     "description": "Main page builder for creating flexible page layouts.",
     "show_in_rest": 0,
-    "modified": 1753082834
+    "modified": 1755675062
 }
