@@ -1,14 +1,14 @@
 {
-    "key": "group_page_builder_consolidated",
-    "title": "Page Builder",
+    "key": "group_product_page_builder",
+    "title": "Product Page Builder",
     "fields": [
         {
-            "key": "field_page_builder_flexible_content",
+            "key": "field_product_page_builder_flexible_content",
             "label": "Content Blocks",
             "name": "content_blocks",
             "aria-label": "",
             "type": "flexible_content",
-            "instructions": "Voeg blokken toe en versleep ze om je pagina op te bouwen",
+            "instructions": "Voeg blokken toe en versleep ze om je product pagina op te bouwen",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -219,7 +219,7 @@
                     "sub_fields": [
                         {
                             "key": "field_66eaa288f50e1",
-                            "label": "Vraag \/ antwoord",
+                            "label": "Vraag / antwoord",
                             "name": "faq_va_repeater",
                             "aria-label": "",
                             "type": "repeater",
@@ -1225,6 +1225,51 @@
             "min": "",
             "max": "",
             "button_label": "Add Block"
+        },
+        {
+            "key": "field_6878c9ece6b26",
+            "label": "Anker Link",
+            "name": "anchor_link",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Voeg een anker link toe die naar een specifiek element op de pagina verwijst. Voeg     id=\"anchor\"    toe aan een html tag om de link hier naartoe te verwijzen.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "Bijvoorbeeld: Meer informatie",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6878c9ece6b25",
+            "label": "Gerelateerde producten",
+            "name": "manual_related_products",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Selecteer specifieke gerelateerde producten. Indien leeg, worden automatisch gerelateerde producten getoond op basis van productcategorie.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "taxonomy": "",
+            "return_format": "object",
+            "multiple": 1,
+            "allow_null": 1,
+            "allow_in_bindings": 0,
+            "ui": 1
         }
     ],
     "location": [
@@ -1232,20 +1277,18 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "page"
+                "value": "product"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "acf_after_title",
-    "style": "seamless",
+    "position": "normal",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "the_content"
-    ],
+    "hide_on_screen": "",
     "active": true,
-    "description": "Main page builder for creating flexible page layouts.",
+    "description": "Flexible page builder for product pages with content blocks, anchor link, and related products.",
     "show_in_rest": 0,
     "modified": 1755679449
 }

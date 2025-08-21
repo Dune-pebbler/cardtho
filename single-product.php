@@ -1,14 +1,6 @@
 <?php
-$title = get_field('title');
-$paragraph = get_field('paragraph');
-
-$title_2 = get_field('title_2');
-$paragraph_2 = get_field('paragraph_2');
-
 $anchor_link = get_field('anchor_link');
-
 $gallery_images = get_field('product_afbeeldingen');
-
 ?>
 
 <?php get_header(); ?>
@@ -59,32 +51,82 @@ $gallery_images = get_field('product_afbeeldingen');
             </div>
         </div>
     </div>
-    <div class="info-container">
-        <div class="container">
-            <div class="row justify-center">
-                <div class="col-8">
-                    <div class="content">
-                        <?php if ($title): ?>
-                            <h2 class="content__title"><?= $title ?></h2>
-                        <?php endif; ?>
-                        <?php if ($paragraph): ?>
-                            <div class="content__paragraph"><?= $paragraph ?></div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="col-8">
-                    <div class="content">
-                        <?php if ($title_2): ?>
-                            <h2 class="content__title"><?= $title_2 ?></h2>
-                        <?php endif; ?>
-                        <?php if ($paragraph_2): ?>
-                            <div class="content__paragraph"><?= $paragraph_2 ?></div>
-                        <?php endif; ?>
-                    </div>
-                </div>
+    
+    <?php if (have_rows('content_blocks')): ?>
+        <div class="info-container">
+            <div class="container">
+                <?php while (have_rows('content_blocks')) : the_row();
+                    $layout = get_row_layout();
+
+                    switch ($layout) {
+                        case 'hero':
+                            get_template_part('template-parts/blocks/block', 'hero');
+                            break;
+
+                        case 'tekst':
+                            get_template_part('template-parts/blocks/block', 'single-text');
+                            break;
+
+                        case 'post_archive':
+                            get_template_part('template-parts/blocks/block', 'post-archive');
+                            break;
+
+                        case 'tiles':
+                            get_template_part('template-parts/blocks/block', 'tiles');
+                            break;
+
+                        case 'kaart':
+                            get_template_part('template-parts/blocks/block', 'map');
+                            break;
+
+                        case 'tekst_met_afbeelding':
+                            get_template_part('template-parts/blocks/block', 'image-text');
+                            break;
+
+                        case 'form':
+                            get_template_part('template-parts/blocks/block', 'form');
+                            break;
+
+                        case 'latest_news':
+                            get_template_part('template-parts/blocks/block', 'latest-news');
+                            break;
+
+                        case 'afbeelding':
+                            get_template_part('template-parts/blocks/block', 'image');
+                            break;
+
+                        case 'breadcrumbs':
+                            get_template_part('template-parts/blocks/block', 'breadcrumbs');
+                            break;
+
+                        case 'decoratie':
+                            get_template_part('template-parts/blocks/block', 'decoration');
+                            break;
+
+                        case 'downloads':
+                            get_template_part('template-parts/blocks/block', 'downloads');
+                            break;
+
+                        case 'faq':
+                            get_template_part('template-parts/blocks/block', 'faq');
+                            break;
+
+                        case 'info_slider':
+                            get_template_part('template-parts/blocks/block', 'info-slider');
+                            break;
+
+                        case 'logo_slider':
+                            get_template_part('template-parts/blocks/block', 'logo-slider');
+                            break;
+
+                        case 'masonry':
+                            get_template_part('template-parts/blocks/block', 'masonry');
+                            break;
+                    }
+                endwhile; ?>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
 </section>
 
 <?php

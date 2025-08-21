@@ -33,6 +33,10 @@ if (have_rows('content_blocks')):
                 get_template_part('template-parts/blocks/block', 'form');
                 break;
 
+            case 'latest_news':
+                get_template_part('template-parts/blocks/block', 'latest-news');
+                break;
+
                 
         }
     endwhile;

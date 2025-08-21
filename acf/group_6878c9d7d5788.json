@@ -1,28 +1,7 @@
 {
     "key": "group_6878c9d7d5788",
-    "title": "Productinformatie",
+    "title": "Product eigenschappen",
     "fields": [
-        {
-            "key": "field_6878c9ece6b26",
-            "label": "Anker Link",
-            "name": "anchor_link",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Voeg een anker link toe die naar een specifiek element op de pagina verwijst. Voeg     id=\"anchor\"    toe aan een html tag om de link hier naartoe te verwijzen.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "Bijvoorbeeld: Meer informatie",
-            "prepend": "",
-            "append": ""
-        },
         {
             "key": "field_6878ca65572ab",
             "label": "Titel",
@@ -106,30 +85,6 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
-        },
-        {
-            "key": "field_6878c9ece6b25",
-            "label": "Gerelateerde producten",
-            "name": "manual_related_products",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "Selecteer specifieke gerelateerde producten. Indien leeg, worden automatisch gerelateerde producten getoond op basis van productcategorie.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "product"
-            ],
-            "taxonomy": "",
-            "return_format": "object",
-            "multiple": 1,
-            "allow_null": 1,
-            "allow_in_bindings": 0,
-            "ui": 1
         }
     ],
     "location": [
@@ -150,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1752746740
+    "modified": 1755766305
 }

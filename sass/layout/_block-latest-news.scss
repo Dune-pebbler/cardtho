@@ -1,0 +1,80 @@
+.latest-news-block {
+  padding: 60px 0;
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
+  
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--title-color);
+    margin: 0;
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  
+  &__view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: var(--button-primary-hover-color);
+      transform: translateX(4px);
+    }
+    
+    i {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover i {
+      transform: translateX(4px);
+    }
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  
+  &__no-posts {
+    text-align: center;
+    padding: 40px 20px;
+    
+    p {
+      color: var(--paragraph-color);
+      opacity: 0.8;
+      font-size: 18px;
+    }
+  }
+}
+
+// Reuse existing news-card styles from news-archive.scss
+// The news-card styles are already defined in _news-archive.scss
+// and will be available globally since they're imported in main.scss
