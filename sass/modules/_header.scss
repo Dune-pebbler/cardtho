@@ -29,6 +29,7 @@ header.main-header {
   .nav-menu {
     display: flex;
     padding-right: 1em;
+    overflow-y: scroll;
     @media (max-width: $screen-md-max) {
       display: none;
       position: fixed;

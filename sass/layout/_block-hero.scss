@@ -1,10 +1,25 @@
 section.block-hero {
-  padding: 6em;
+  padding: 2em 1em;
   overflow: hidden;
   margin-bottom: -48px;
+  
+  // Responsive padding adjustments
+  @media (min-width: $screen-sm-max) {
+    padding: 3em 2em;
+  }
+  
+  @media (min-width: $screen-md-max) {
+    padding: 4em 3em;
+  }
+  
+  @media (min-width: $screen-lg-max) {
+    padding: 6em;
+  }
+  
   & + section.block-post-archive {
     background-color: rgb(247, 247, 247);
   }
+  
   &:not(:has(img)) {
     padding: 1em;
     margin-bottom: 0;
@@ -14,25 +29,43 @@ section.block-hero {
       height: calc(100% + 2em) !important;
     }
   }
+  
   .arrow-bg {
     position: relative;
+    
     .arrow-1 {
       position: absolute;
       height: calc(100% + 12em);
       content: "";
       background-color: #81c3e9;
-      width: 700px;
+      width: 100%;
+      max-width: 700px;
       top: 50%;
       right: -64px;
       transform: translate(0, -50%);
       z-index: -3;
       border-radius: 20px;
+      
+      // Responsive adjustments for arrow
+      @media (max-width: $screen-md-max) {
+        width: 80%;
+        max-width: 400px;
+        right: -32px;
+        border-radius: 15px;
+      }
+      
+      @media (max-width: $screen-sm-max) {
+        width: 70%;
+        max-width: 300px;
+        right: -16px;
+        border-radius: 10px;
+      }
     }
+    
     .arrow-2 {
       position: absolute;
       height: calc(100% + 12em);
       content: "";
-      // background-color: white;
       width: 320px;
       top: 50%;
       transform: translate(0, -50%) rotate(-90deg);
@@ -44,12 +77,27 @@ section.block-hero {
       border-left: 620px solid transparent;
       border-right: 620px solid transparent;
       border-top: 320px solid var(--tertiary-color);
+      
+      // Responsive adjustments for arrow
+      @media (max-width: $screen-md-max) {
+        border-left: 400px solid transparent;
+        border-right: 400px solid transparent;
+        border-top: 200px solid var(--tertiary-color);
+        right: -180px;
+      }
+      
+      @media (max-width: $screen-sm-max) {
+        border-left: 300px solid transparent;
+        border-right: 300px solid transparent;
+        border-top: 150px solid var(--tertiary-color);
+        right: -120px;
+      }
     }
+    
     .arrow-3 {
       position: absolute;
       height: calc(100% + 12em);
       content: "";
-      // background-color: white;
       width: 320px;
       top: 50%;
       transform: translate(0, -50%) rotate(-90deg);
@@ -61,16 +109,88 @@ section.block-hero {
       border-left: 620px solid transparent;
       border-right: 620px solid transparent;
       border-top: 320px solid white;
+      
+      // Responsive adjustments for arrow
+      @media (max-width: $screen-md-max) {
+        border-left: 400px solid transparent;
+        border-right: 400px solid transparent;
+        border-top: 200px solid white;
+        right: -80px;
+      }
+      
+      @media (max-width: $screen-sm-max) {
+        border-left: 300px solid transparent;
+        border-right: 300px solid transparent;
+        border-top: 150px solid white;
+        right: -60px;
+      }
     }
   }
+  
   .btn {
     margin-top: 1em;
   }
+  
   .stamp {
     position: absolute;
     top: -100px;
     z-index: 10;
     max-width: 200px;
     transform: rotate(15deg);
+    
+    // Responsive adjustments for stamp
+    @media (max-width: $screen-md-max) {
+      max-width: 150px;
+      top: -75px;
+    }
+    
+    @media (max-width: $screen-sm-max) {
+      max-width: 100px;
+      top: -50px;
+      right: 10px;
+    }
+  }
+  
+  // Additional responsive improvements for content
+  .row {
+    @media (max-width: $screen-sm-max) {
+      flex-direction: column;
+      
+      .col-12 {
+        margin-bottom: 2em;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  // Improve image responsiveness
+  .img-container {
+    @media (max-width: $screen-sm-max) {
+      margin-top: 1em;
+    }
+    
+    img.cover {
+      @media (max-width: $screen-sm-max) {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  // Improve button responsiveness
+  .btn-container {
+    @media (max-width: $screen-sm-max) {
+      justify-content: center;
+      
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
   }
 }
