@@ -1626,7 +1626,6 @@ header.main-header .nav-logo__img {
 header.main-header .nav-menu {
   display: flex;
   padding-right: 1em;
-  overflow-y: scroll;
 }
 @media (max-width: 992px) {
   header.main-header .nav-menu {
