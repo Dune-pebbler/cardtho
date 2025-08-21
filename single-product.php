@@ -49,7 +49,7 @@ $gallery_images = get_field('product_afbeeldingen');
                 <div class="col-12 col-lg-5">
                     <?= the_content(); ?>
                     <div class="product-buttons">
-                        <a href="https://cardthostore.nl/product/<?= get_post_field('post_name') ?>" target="_blank" class="btn">Kopen</a>
+                        <a href="https://cardthostore.nl/product/<?= get_post_field('post_name') ?>" target="_blank" class="btn">Koop in shop</a>
                         <?php if ($anchor_link): ?>
                             <a href="#anchor" class="btn btn-secondary"><?= esc_html($anchor_link); ?></a>
                         <?php endif; ?>

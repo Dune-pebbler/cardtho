@@ -1,25 +1,28 @@
-
-
-.form-container {
-  padding: 32px;
-  padding-bottom: 16px;
-  border-radius: 8px;
-  margin-bottom: -520px;
-  background-color: #e9f2fc;
-  h2 {
-    font-size: 32px;
-    margin-top: 8px;
-  }
-  textarea {
-    height: 132px !important;
-  }
-  .gform_wrapper {
-    * {
+.footer-form {
+  .form-container {
+    padding: 32px;
+    padding-bottom: 16px;
+    border-radius: 8px;
+    margin-bottom: -520px;
+    @media (max-width: $screen-md-max) {
+      margin-bottom: 0px;
+    }
+    background-color: #e9f2fc;
+    h2 {
+      font-size: 32px;
+      margin-top: 8px;
+    }
+    textarea {
+      height: 132px !important;
+    }
+    .gform_wrapper {
+      * {
         border: 0px !important;
         border-radius: 8px;
-    }
-    .gform_required_legend {
-      display: none !important;
+      }
+      .gform_required_legend {
+        display: none !important;
+      }
     }
   }
 }

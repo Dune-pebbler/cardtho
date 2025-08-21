@@ -2,103 +2,27 @@ section.block-form {
   padding: 3em 0;
   
   .form-container {
-    margin-bottom: 0 !important;
-    padding-right: 2em;
-    
-    @media (max-width: 991px) {
-      padding-right: 0;
-      margin-bottom: 2em !important;
+    padding: 32px;
+    padding-bottom: 16px;
+    border-radius: 8px;
+    background-color: #e9f2fc;
+    h2,h3 {
+      font-size: 32px;
+      margin-top: 24px;
+      color: var(--title-color);
+      font-weight:bold;
+      margin-bottom:  8px;
     }
-    
+    textarea {
+      height: 132px !important;
+    }
     .gform_wrapper {
-      // Gravity Forms specific styling
-      
-      .gform_heading {
-        display: none; // Hide form title/description since we use intro_text
+      * {
+          border: 0px !important;
+          border-radius: 8px;
       }
-      
-      .gform_body {
-        .gform_fields {
-          .gfield {
-            margin-bottom: 1.5em;
-            
-            label {
-              font-weight: 600;
-              margin-bottom: 0.5em;
-              display: block;
-              color: var(--text-color, #333);
-            }
-            
-            input[type="text"],
-            input[type="email"], 
-            input[type="tel"],
-            input[type="url"],
-            select,
-            textarea {
-              width: 100%;
-              padding: 0.75em 1em;
-              border: 1px solid #ddd;
-              border-radius: 4px;
-              font-size: 1rem;
-              transition: border-color 0.3s ease;
-              
-              &:focus {
-                outline: none;
-                border-color: var(--primary-color, #0098f2);
-                box-shadow: 0 0 0 2px rgba(0, 152, 242, 0.1);
-              }
-            }
-            
-            textarea {
-              min-height: 120px;
-              resize: vertical;
-            }
-            
-            // Error styling
-            &.gfield_error {
-              input, textarea, select {
-                border-color: #dc3545;
-              }
-              
-              .validation_message {
-                color: #dc3545;
-                font-size: 0.875em;
-                margin-top: 0.5em;
-                display: block;
-              }
-            }
-            
-            // Required field indicator
-            .gfield_required {
-              color: #dc3545;
-            }
-          }
-        }
-      }
-      
-      .gform_footer {
-        margin-top: 2em;
-        
-        input[type="submit"] {
-          background-color: var(--primary-color, #0098f2);
-          color: white;
-          border: none;
-          padding: 0.75em 2em;
-          border-radius: 4px;
-          font-size: 1rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-          
-          &:hover {
-            background-color: var(--primary-color-dark, #0074bc);
-          }
-          
-          &:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-          }
-        }
+      .gform_required_legend {
+        display: none !important;
       }
     }
   }

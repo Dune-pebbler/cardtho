@@ -2,13 +2,21 @@ $font1: "avenir-next-lt-pro", sans-serif, Helvetica, Arial, sans-serif;
 $font2: "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
   "Droid Sans", "Helvetica Neue", sans-serif;
 
+// Base font family for all elements
+* {
+  font-family: $font2;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Headings
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  -webkit-font-smoothing: antialiased;
   color: var(--title-color);
   font-weight: bold;
   margin-top: 30px;
@@ -44,6 +52,7 @@ h1, h1 span {
     font-size: 24px;
   }
 }
+
 h2 {
   font-size: 40px;
   @media (max-width: $screen-lg-max) {
@@ -55,12 +64,12 @@ h2 {
   @media (max-width: $screen-sm-max) {
     font-size: 28px;
   }
-  line-height:1.05;
+  line-height: 1.05;
 }
 
 h3 {
   font-size: 24px;
-  color:black;
+  color: black;
   font-weight: 500;
   @media (max-width: $screen-lg-max) {
     font-size: 22px;
@@ -78,11 +87,26 @@ h4 {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
+h5 {
+  font-size: 0.875rem;
+  margin-top: 0.875em;
+  margin-bottom: 0.875em;
+}
+
+h6 {
+  font-size: 0.75rem;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+// Paragraphs and text elements
 p {
-  -webkit-font-smoothing: antialiased;
   color: var(--paragraph-color);
   font-size: 18px;
   font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 1rem;
   @media (max-width: $screen-md-max) {
     font-size: 16px;
   }
@@ -90,35 +114,333 @@ p {
     font-size: 16px;
   }
 }
-ul {
-  -webkit-font-smoothing: antialiased;
+
+// Links
+a {
+  color: var(--link-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--link-hover-color, var(--link-color));
+  }
+}
+
+// Lists
+ul,
+ol {
   list-style: disc;
   font-size: 16px;
   color: var(--paragraph-color);
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  
   li {
-    -webkit-font-smoothing: antialiased;
+    margin-bottom: 0.5rem;
+    color: var(--paragraph-color);
+    line-height: 1.6;
+  }
+}
+
+ol {
+  list-style: decimal;
+}
+
+dl {
+  margin-bottom: 1rem;
+  
+  dt {
+    font-weight: bold;
+    color: var(--title-color);
+    margin-top: 1rem;
+  }
+  
+  dd {
+    margin-left: 1rem;
     margin-bottom: 0.5rem;
     color: var(--paragraph-color);
   }
 }
-a {
-  -webkit-font-smoothing: antialiased;
-  color: var(--link-color);
+
+// Form elements
+label {
+  display: inline-block;
   font-weight: 500;
-  
-}
-strong {
-  font-weight: bold;
+  color: var(--label-color, var(--title-color));
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
-em {
-  font-style: italic;
-}
-//targets placeholders in inputs etc.
-* {
-  font-family: $font2;
+legend {
+  font-weight: 600;
+  color: var(--legend-color, var(--title-color));
   font-size: 18px;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+  border: none;
 }
+
+// Input placeholders
+::placeholder {
+  color: var(--placeholder-color, #999);
+  font-family: $font2;
+  font-size: 16px;
+  opacity: 1;
+}
+
+
+
+// Text formatting
+strong,
+b {
+  font-weight: bold;
+  color: var(--strong-color, var(--paragraph-color));
+}
+
+em,
+i {
+  font-style: italic;
+  color: var(--em-color, var(--paragraph-color));
+}
+
+u {
+  text-decoration: underline;
+  color: var(--u-color, var(--paragraph-color));
+}
+
+s,
+strike,
+del {
+  text-decoration: line-through;
+  color: var(--del-color, var(--paragraph-color));
+}
+
+ins {
+  text-decoration: underline;
+  color: var(--ins-color, var(--paragraph-color));
+}
+
+mark {
+  background-color: var(--mark-bg-color, #ffeb3b);
+  color: var(--mark-color, #000);
+  padding: 0.1em 0.2em;
+}
+
+// Code elements
+code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--code-bg-color, #f5f5f5);
+  color: var(--code-color, #333);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--pre-bg-color, #f5f5f5);
+  color: var(--pre-color, #333);
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid var(--blockquote-border-color, #ddd);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--blockquote-color, var(--paragraph-color));
+  
+  p {
+    margin-bottom: 0.5rem;
+  }
+  
+  cite {
+    font-size: 0.9em;
+    color: var(--cite-color, #666);
+  }
+}
+
+// Small text
+small {
+  font-size: 0.875em;
+  color: var(--small-color, #666);
+}
+
+// Subscript and superscript
+sub {
+  font-size: 0.75em;
+  vertical-align: sub;
+}
+
+sup {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+// Abbreviations
+abbr[title] {
+  border-bottom: 1px dotted var(--abbr-border-color, #666);
+  cursor: help;
+  text-decoration: none;
+}
+
+// Address
+address {
+  font-style: normal;
+  color: var(--address-color, var(--paragraph-color));
+  margin-bottom: 1rem;
+}
+
+// Definition terms
+dfn {
+  font-style: italic;
+  color: var(--dfn-color, var(--paragraph-color));
+}
+
+// Keyboard input
+kbd {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--kbd-bg-color, #f5f5f5);
+  border: 1px solid var(--kbd-border-color, #ccc);
+  border-radius: 3px;
+  padding: 0.1em 0.3em;
+  font-size: 0.9em;
+}
+
+// Sample output
+samp {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: var(--samp-bg-color, #f5f5f5);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+// Variable
+var {
+  font-style: italic;
+  color: var(--var-color, var(--paragraph-color));
+}
+
+// Time
+time {
+  color: var(--time-color, var(--paragraph-color));
+}
+
+// Output
+output {
+  color: var(--output-color, var(--paragraph-color));
+  font-weight: 500;
+}
+
+// Progress
+progress {
+  color: var(--progress-color, var(--paragraph-color));
+}
+
+// Meter
+meter {
+  color: var(--meter-color, var(--paragraph-color));
+}
+
+// Details and summary
+details {
+  margin-bottom: 1rem;
+  
+  summary {
+    font-weight: 500;
+    color: var(--summary-color, var(--title-color));
+    cursor: pointer;
+    padding: 0.5rem 0;
+    
+    &:hover {
+      color: var(--summary-hover-color, var(--link-color));
+    }
+  }
+}
+
+// Ruby annotations
+ruby {
+  color: var(--ruby-color, var(--paragraph-color));
+}
+
+rt {
+  font-size: 0.75em;
+  color: var(--rt-color, #666);
+}
+
+// Data
+data {
+  color: var(--data-color, var(--paragraph-color));
+}
+
+// Utility classes
 .black-text {
-  color:black;
+  color: black;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-break {
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
 }

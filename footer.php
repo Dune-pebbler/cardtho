@@ -28,7 +28,7 @@ $footer_form = get_field('site_settings_footer_form', 'option');
 </main>
 <footer class="test-class">
 
-  <div class="footer-main container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 items-start">
+  <div class="footer-main container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-start">
     <!-- <?php if ($socials_bool &&  have_rows('socials_repeater', 'option')) : ?>
       <div class="grouper-logo">
         <div class="footer-logo mb-4">
