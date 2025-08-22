@@ -8,16 +8,16 @@ $gallery_images = get_field('product_afbeeldingen');
 <section class="single-product">
     <div class="product-container">
         <div class="container arrow-bg">
-            <div class="row align-items-start">
+            <div class="row">
                 <div class="arrow-1">
                 </div>
                 <div class="arrow-2" data-animate="slide-in-right" data-animate-delay="300">
                 </div>
                 <div class="arrow-3" data-animate="slide-in-right" data-animate-delay="300">
                 </div>
-                <?php if ($gallery_images): ?>
-                    <div class="col-12 col-lg-6 order-1 order-lg-1">
-                        <div class="main-image">
+                <div class="col-12 col-lg-6">
+                    <div class="main-image">
+                        <?php if ($gallery_images): ?>
                             <div class="owl-carousel owl-1 product-image-slider">
                                 <?php foreach ($gallery_images as $image): ?>
                                     <div class="item">
@@ -27,7 +27,17 @@ $gallery_images = get_field('product_afbeeldingen');
                                     </div>
                                 <?php endforeach; ?>
                             </div>
-                        </div>
+                        <?php else: ?>
+                            <div class="owl-carousel owl-1 product-image-slider">
+                                <div class="item">
+                                    <a href="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" data-fancybox="product-gallery">
+                                        <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>" alt="<?= esc_attr(get_the_title()); ?>" loading="lazy" />
+                                    </a>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <?php if ($gallery_images): ?>
                         <div class="product-thumbnail-slider owl-carousel owl-theme mt-3">
                             <?php foreach ($gallery_images as $image): ?>
                                 <div class="item">
@@ -35,10 +45,16 @@ $gallery_images = get_field('product_afbeeldingen');
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                    </div>
-                <?php endif; ?>
+                    <?php else: ?>
+                        <div class="product-thumbnail-slider owl-carousel owl-theme mt-3">
+                            <div class="item">
+                                <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail')); ?>" alt="<?= esc_attr(get_the_title()); ?>" loading="lazy" />
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                </div>
                 <div class="col-lg-1 d-none d-lg-block"></div>
-                <div class="col-12 col-lg-5 order-2 order-lg-2">
+                <div class="col-12 col-lg-5 ">
                     <div class="product-content">
                         <?= the_content(); ?>
                         <div class="product-buttons">

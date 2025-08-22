@@ -37,7 +37,7 @@ section.single-product {
         height: 100%;
         object-fit: contain;
         background-color: white;
-        max-height: 100%;
+        max-height: 500px;
       }
     }
   }
@@ -77,24 +77,17 @@ section.single-product {
       max-width: 200px;
       
       &.btn-secondary {
-        background-color: var(--secondary-color, #6c757d);
-        border-color: var(--secondary-color, #6c757d);
+        background-color: black;
+        border-color: rgb(79, 79, 79);
+        color: white;
         
         &:hover {
-          background-color: var(--secondary-color-hover, #5a6268);
-          border-color: var(--secondary-color-hover, #5a6268);
+          background-color: #4a4a4a;
+          border-color: #3c3c3c;
+          color: white;
         }
       }
       
-      &.btn-primary {
-        background-color: var(--primary-color, #007bff);
-        border-color: var(--primary-color, #007bff);
-        
-        &:hover {
-          background-color: var(--primary-color-hover, #0056b3);
-          border-color: var(--primary-color-hover, #0056b3);
-        }
-      }
     }
     
     // Mobile breakpoint

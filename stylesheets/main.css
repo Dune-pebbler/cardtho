@@ -456,9 +456,6 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-a:hover {
-  color: var(--link-hover-color, var(--link-color));
-}
 
 ul,
 ol {
@@ -1933,7 +1930,7 @@ section.single-product .item a img {
   -o-object-fit: contain;
      object-fit: contain;
   background-color: white;
-  max-height: 100%;
+  max-height: 500px;
 }
 section.single-product .product-container {
   overflow: hidden;
@@ -1969,24 +1966,14 @@ section.single-product .product-buttons .owl-nav .owl-next,
   max-width: 200px;
 }
 section.single-product .product-buttons .btn.btn-secondary, section.single-product .product-buttons .btn-secondary {
-  background-color: var(--secondary-color, #6c757d);
-  border-color: var(--secondary-color, #6c757d);
+  background-color: black;
+  border-color: rgb(79, 79, 79);
+  color: white;
 }
 section.single-product .product-buttons .btn.btn-secondary:hover, section.single-product .product-buttons .btn-secondary:hover {
-  background-color: var(--secondary-color-hover, #5a6268);
-  border-color: var(--secondary-color-hover, #5a6268);
-}
-section.single-product .product-buttons .btn.btn-primary, section.single-product .product-buttons .owl-nav .btn-primary.owl-prev, .owl-nav section.single-product .product-buttons .btn-primary.owl-prev,
-section.single-product .product-buttons .owl-nav .btn-primary.owl-next,
-.owl-nav section.single-product .product-buttons .btn-primary.owl-next, section.single-product .product-buttons .btn-primary.btn-secondary, section.single-product .product-buttons .btn-primary.btn-outline {
-  background-color: var(--primary-color, #007bff);
-  border-color: var(--primary-color, #007bff);
-}
-section.single-product .product-buttons .btn.btn-primary:hover, section.single-product .product-buttons .owl-nav .btn-primary.owl-prev:hover, .owl-nav section.single-product .product-buttons .btn-primary.owl-prev:hover,
-section.single-product .product-buttons .owl-nav .btn-primary.owl-next:hover,
-.owl-nav section.single-product .product-buttons .btn-primary.owl-next:hover, section.single-product .product-buttons .btn-primary.btn-secondary:hover, section.single-product .product-buttons .btn-primary.btn-outline:hover {
-  background-color: var(--primary-color-hover, #0056b3);
-  border-color: var(--primary-color-hover, #0056b3);
+  background-color: #4a4a4a;
+  border-color: #3c3c3c;
+  color: white;
 }
 @media (max-width: 767px) {
   section.single-product .product-buttons {
@@ -2784,7 +2771,6 @@ section.single-product .main-image .product-image-slider .item {
 
 .related-posts {
   padding: 80px 0;
-  background: #f8f9fa;
 }
 .related-posts__header {
   text-align: center;
