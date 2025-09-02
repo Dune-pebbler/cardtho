@@ -1,4 +1,12 @@
 section.single-product {
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  // Ensure anchor elements are properly positioned for smooth scrolling
+  [id] {
+    scroll-margin-top: 100px; // Adjust this value based on your header height
+  }
   // Product image container
   .item {
     border-radius: 8px;

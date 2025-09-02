@@ -146,9 +146,13 @@ wp_reset_postdata();
                 <?php foreach ($bestelbare_products as $product) : ?>
                     <?php
                     $is_orderable = get_field('bestelbaar', $product->ID) ?? true;
+                    // Check if custom thumbnail text is available, otherwise use excerpt
+                    $custom_thumbnail_text = get_field('korte_thumbnail_text', $product->ID);
+                    $description = $custom_thumbnail_text ? $custom_thumbnail_text : get_the_excerpt($product->ID);
+                    
                     $post_args = array(
                         'title' => get_the_title($product->ID),
-                        'description' => get_the_excerpt($product->ID),
+                        'description' => $description,
                         'image' => array(
                             'url' => get_the_post_thumbnail_url($product->ID, 'medium'),
                             'alt' => get_post_meta(get_post_thumbnail_id($product->ID), '_wp_attachment_image_alt', true)
@@ -199,9 +203,13 @@ wp_reset_postdata();
                     <?php foreach ($end_of_life_products as $product) : ?>
                         <?php
                         $is_orderable = get_field('bestelbaar', $product->ID) ?? false;
+                        // Check if custom thumbnail text is available, otherwise use excerpt
+                        $custom_thumbnail_text = get_field('korte_thumbnail_text', $product->ID);
+                        $description = $custom_thumbnail_text ? $custom_thumbnail_text : get_the_excerpt($product->ID);
+                        
                         $post_args = array(
                             'title' => get_the_title($product->ID),
-                            'description' => get_the_excerpt($product->ID),
+                            'description' => $description,
                             'image' => array(
                                 'url' => get_the_post_thumbnail_url($product->ID, 'medium'),
                                 'alt' => get_post_meta(get_post_thumbnail_id($product->ID), '_wp_attachment_image_alt', true)

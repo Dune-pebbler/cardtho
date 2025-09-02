@@ -58,7 +58,11 @@ $gallery_images = get_field('product_afbeeldingen');
                     <div class="product-content">
                         <?= the_content(); ?>
                         <div class="product-buttons">
-                            <a href="https://cardthostore.nl/product/<?= get_post_field('post_name') ?>" target="_blank" class="btn btn-primary">Koop in shop</a>
+                            <?php 
+                            $custom_url = get_field('custom_product_url');
+                            $product_url = $custom_url ? $custom_url : 'https://cardthostore.nl/product/' . get_post_field('post_name');
+                            ?>
+                            <a href="<?= esc_url($product_url) ?>" target="_blank" class="btn btn-primary">Koop in shop</a>
                             <?php if ($anchor_link): ?>
                                 <a href="#anchor" class="btn btn-secondary"><?= esc_html($anchor_link); ?></a>
                             <?php endif; ?>
@@ -150,5 +154,55 @@ $gallery_images = get_field('product_afbeeldingen');
 // Load related posts
 get_template_part('template-parts/related-posts');
 ?>
+
+<script>
+// Smooth scrolling for anchor links
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle all anchor links on the page
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Calculate offset for fixed header if needed
+                const headerHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
+                const targetPosition = targetElement.offsetTop - headerHeight - 20; // 20px extra spacing
+                
+                // Smooth scroll to target
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL hash without jumping
+                history.pushState(null, null, '#' + targetId);
+            }
+        });
+    });
+    
+    // Handle direct hash links on page load
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            setTimeout(() => {
+                const headerHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
+                const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }, 100); // Small delay to ensure page is fully loaded
+        }
+    }
+});
+</script>
 
 <?php get_footer(); ?>

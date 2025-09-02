@@ -85,6 +85,46 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
+        },
+        {
+            "key": "field_custom_product_url",
+            "label": "Aangepaste product URL",
+            "name": "custom_product_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Plak de volledige url van de het product bijv: cardthostorecardthostore.nl/product/zenius-primacy-lint-zwart-ribbon/",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https://cardthostore.nl/product/product-name/",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_korte_thumbnail_text",
+            "label": "Korte thumbnail text",
+            "name": "korte_thumbnail_text",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Deze tekst wordt getoond op de archief pagina in plaats van de standaard excerpt",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "Korte beschrijving voor de archief pagina...",
+            "new_lines": "br",
+            "allow_in_bindings": 0
         }
     ],
     "location": [
