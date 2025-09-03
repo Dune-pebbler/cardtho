@@ -5,53 +5,31 @@
  */
 $posts_per_page = get_sub_field('maximum_aantal_posts') ?: 12;
 $productgroep = get_sub_field('productgroep');
-$featured_products = get_sub_field('featured_products') ?: [];
 $animation_counter = 0; // Single counter for smooth waterfall effect
 $eol_intro = get_sub_field('end_of_line_printers_intro');
+
+// Get ordering options
+$orderby = get_sub_field('post_orderby') ?: 'date';
+$order = get_sub_field('post_order') ?: 'DESC';
+$meta_key = get_sub_field('post_meta_key') ?: '';
 
 // Get current page for bestelbare products
 $bestelbare_paged = isset($_GET['bestelbare_page']) ? intval($_GET['bestelbare_page']) : 1;
 // Get current page for end-of-life products  
 $eol_paged = isset($_GET['eol_page']) ? intval($_GET['eol_page']) : 1;
 
-// Get featured product IDs
-$featured_product_ids = [];
-$featured_bestelbare = [];
-$featured_eol = [];
-
-if ($featured_products) {
-    foreach ($featured_products as $featured_product) {
-        $featured_product_ids[] = $featured_product->ID;
-
-        // Check if featured product matches the selected product group (if any)
-        $include_featured = true;
-        if ($productgroep) {
-            $product_terms = wp_get_post_terms($featured_product->ID, $productgroep[0]->taxonomy);
-            $include_featured = false;
-            foreach ($product_terms as $term) {
-                if ($term->term_id == $productgroep[0]->term_id) {
-                    $include_featured = true;
-                    break;
-                }
-            }
-        }
-
-        if ($include_featured) {
-            $is_bestelbaar = get_field('bestelbaar', $featured_product->ID);
-            if ($is_bestelbaar) {
-                $featured_bestelbare[] = $featured_product;
-            } else {
-                $featured_eol[] = $featured_product;
-            }
-        }
-    }
-}
-
-// Base query args - don't exclude featured products, let them be part of normal pagination
+// Base query args for product queries
 $base_args = array(
     'post_type'      => 'product',
     'posts_per_page' => $posts_per_page,
+    'orderby'        => $orderby,
+    'order'          => $order,
 );
+
+// Add meta_key if using meta_value or meta_value_num ordering
+if (in_array($orderby, ['meta_value', 'meta_value_num']) && !empty($meta_key)) {
+    $base_args['meta_key'] = $meta_key;
+}
 
 // Apply product group filter if selected
 if ($productgroep) {
@@ -104,6 +82,8 @@ if ($bestelbare_query->have_posts()) {
     }
 }
 
+
+
 // Add end-of-life products from query
 if ($eol_query->have_posts()) {
     while ($eol_query->have_posts()) {
@@ -112,33 +92,14 @@ if ($eol_query->have_posts()) {
     }
 }
 
-// Move featured products to the front on first page only
-if ($bestelbare_paged <= 1 && !empty($featured_bestelbare)) {
-    // Remove featured products from regular array if they exist
-    $bestelbare_products = array_filter($bestelbare_products, function($product) use ($featured_product_ids) {
-        return !in_array($product->ID, $featured_product_ids);
-    });
-    // Add featured products to the beginning
-    $bestelbare_products = array_merge($featured_bestelbare, $bestelbare_products);
-    // Trim to posts_per_page limit
-    $bestelbare_products = array_slice($bestelbare_products, 0, $posts_per_page);
-}
 
-if ($eol_paged <= 1 && !empty($featured_eol)) {
-    // Remove featured products from regular array if they exist
-    $end_of_life_products = array_filter($end_of_life_products, function($product) use ($featured_product_ids) {
-        return !in_array($product->ID, $featured_product_ids);
-    });
-    // Add featured products to the beginning
-    $end_of_life_products = array_merge($featured_eol, $end_of_life_products);
-    // Trim to posts_per_page limit
-    $end_of_life_products = array_slice($end_of_life_products, 0, $posts_per_page);
-}
+
+// Products are displayed directly from query results
 
 wp_reset_postdata();
 ?>
 
-<section class="block-post-archive">
+<section class="block-post-archive test">
     <div class="container">
         <!-- Bestelbare printers section -->
         <?php if (!empty($bestelbare_products)) : ?>
@@ -199,6 +160,7 @@ wp_reset_postdata();
                         </div>
                     </div>
                 <?php endif; ?>
+                
                 <div class="row row-gap-2">
                     <?php foreach ($end_of_life_products as $product) : ?>
                         <?php

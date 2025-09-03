@@ -775,37 +775,7 @@
                             "allow_null": 0,
                             "bidirectional_target": []
                         },
-                        {
-                            "key": "field_68a579139a22f",
-                            "label": "Uitgelichte producten",
-                            "name": "featured_products",
-                            "aria-label": "",
-                            "type": "relationship",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [
-                                "product"
-                            ],
-                            "post_status": "",
-                            "taxonomy": "",
-                            "filters": [
-                                "search",
-                                "taxonomy"
-                            ],
-                            "return_format": "object",
-                            "min": "",
-                            "max": "",
-                            "allow_in_bindings": 0,
-                            "elements": "",
-                            "bidirectional": 0,
-                            "bidirectional_target": []
-                        },
+
                         {
                             "key": "field_68a58a752dd33",
                             "label": "End of line printers intro",
@@ -826,6 +796,103 @@
                             "toolbar": "full",
                             "media_upload": 1,
                             "delay": 0
+                        },
+                        {
+                            "key": "field_post_archive_orderby",
+                            "label": "Sorteer producten op",
+                            "name": "post_orderby",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "Kies hoe de producten gesorteerd moeten worden",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "date": "Datum (nieuwste eerst)",
+                                "title": "Titel (A-Z)",
+                                "menu_order": "Menu volgorde",
+                                "rand": "Willekeurig",
+                                "modified": "Laatst bijgewerkt",
+                                "comment_count": "Meeste reacties",
+                                "meta_value": "Meta waarde (bestelbaar)",
+                                "meta_value_num": "Meta waarde numeriek"
+                            },
+                            "default_value": "date",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "search_placeholder": "",
+                            "allow_custom": 0
+                        },
+                        {
+                            "key": "field_post_archive_order",
+                            "label": "Sorteer volgorde",
+                            "name": "post_order",
+                            "aria-label": "",
+                            "type": "select",
+                            "instructions": "Kies de sorteringsvolgorde",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "DESC": "Aflopend (hoog naar laag)",
+                                "ASC": "Oplopend (laag naar hoog)"
+                            },
+                            "default_value": "DESC",
+                            "return_format": "value",
+                            "multiple": 0,
+                            "allow_null": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "search_placeholder": "",
+                            "allow_custom": 0
+                        },
+                        {
+                            "key": "field_post_archive_meta_key",
+                            "label": "Meta veld voor sortering",
+                            "name": "post_meta_key",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Vul dit in wanneer je 'Meta waarde' of 'Meta waarde numeriek' hebt gekozen als sortering (bijv. 'bestelbaar', 'prijs', etc.)",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_post_archive_orderby",
+                                        "operator": "==",
+                                        "value": "meta_value"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_post_archive_orderby",
+                                        "operator": "==",
+                                        "value": "meta_value_num"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "100",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "bijv. bestelbaar, prijs, etc.",
+                            "prepend": "",
+                            "append": ""
                         }
                     ],
                     "min": "",
