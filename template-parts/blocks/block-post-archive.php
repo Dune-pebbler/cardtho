@@ -7,6 +7,7 @@ $posts_per_page = get_sub_field('maximum_aantal_posts') ?: 12;
 $productgroep = get_sub_field('productgroep');
 $animation_counter = 0; // Single counter for smooth waterfall effect
 $eol_intro = get_sub_field('end_of_line_printers_intro');
+$uitgelichte_producten = get_sub_field('uitgelichte_producten'); // Get featured products
 
 // Get ordering options
 $orderby = get_sub_field('post_orderby') ?: 'date';
@@ -42,6 +43,17 @@ if ($productgroep) {
     );
 }
 
+// Exclude featured products from regular queries
+$featured_product_ids = array();
+if ($uitgelichte_producten) {
+    foreach ($uitgelichte_producten as $featured_product) {
+        $featured_product_ids[] = $featured_product->ID;
+    }
+    if (!empty($featured_product_ids)) {
+        $base_args['post__not_in'] = $featured_product_ids;
+    }
+}
+
 // Query for bestelbare products
 $bestelbare_args = array_merge($base_args, array(
     'paged' => $bestelbare_paged,
@@ -73,6 +85,18 @@ $eol_query = new WP_Query($eol_args);
 // Build final product arrays
 $bestelbare_products = [];
 $end_of_life_products = [];
+
+// Add featured products first (check if they are bestelbaar or end-of-life)
+if ($uitgelichte_producten && !empty($uitgelichte_producten)) {
+    foreach ($uitgelichte_producten as $featured_product) {
+        $is_bestelbaar = get_field('bestelbaar', $featured_product->ID) ?? true;
+        if ($is_bestelbaar) {
+            $bestelbare_products[] = $featured_product;
+        } else {
+            $end_of_life_products[] = $featured_product;
+        }
+    }
+}
 
 // Add bestelbare products from query
 if ($bestelbare_query->have_posts()) {

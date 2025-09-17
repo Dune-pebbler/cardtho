@@ -905,26 +905,6 @@ section.block-hero .owl-nav .owl-next,
 .owl-nav section.block-hero .owl-next, section.block-hero .btn-outline, section.block-hero .btn-secondary {
   margin-top: 1em;
 }
-section.block-hero .stamp {
-  position: absolute;
-  top: -100px;
-  z-index: 10;
-  max-width: 200px;
-  transform: rotate(15deg);
-}
-@media (max-width: 992px) {
-  section.block-hero .stamp {
-    max-width: 150px;
-    top: -75px;
-  }
-}
-@media (max-width: 768px) {
-  section.block-hero .stamp {
-    max-width: 100px;
-    top: -50px;
-    right: 10px;
-  }
-}
 @media (max-width: 768px) {
   section.block-hero .row {
     flex-direction: column;

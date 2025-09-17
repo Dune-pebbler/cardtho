@@ -775,7 +775,34 @@
                             "allow_null": 0,
                             "bidirectional_target": []
                         },
-
+                        {
+                            "key": "field_uitgelichte_producten",
+                            "label": "Uitgelichte producten",
+                            "name": "uitgelichte_producten",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "Selecteer producten die bovenaan de lijst moeten verschijnen, ongeacht de sortering",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "object",
+                            "multiple": 1,
+                            "allow_null": 0,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        },
                         {
                             "key": "field_68a58a752dd33",
                             "label": "End of line printers intro",

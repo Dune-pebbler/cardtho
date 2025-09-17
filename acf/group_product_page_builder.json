@@ -776,12 +776,12 @@
                             "bidirectional_target": []
                         },
                         {
-                            "key": "field_68a579139a22f",
+                            "key": "field_uitgelichte_producten",
                             "label": "Uitgelichte producten",
-                            "name": "featured_products",
+                            "name": "uitgelichte_producten",
                             "aria-label": "",
-                            "type": "relationship",
-                            "instructions": "",
+                            "type": "post_object",
+                            "instructions": "Selecteer producten die bovenaan de lijst moeten verschijnen, ongeacht de sortering",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -792,18 +792,15 @@
                             "post_type": [
                                 "product"
                             ],
-                            "post_status": "",
-                            "taxonomy": "",
-                            "filters": [
-                                "search",
-                                "taxonomy"
+                            "post_status": [
+                                "publish"
                             ],
+                            "taxonomy": "",
                             "return_format": "object",
-                            "min": "",
-                            "max": "",
-                            "allow_in_bindings": 0,
-                            "elements": "",
+                            "multiple": 1,
+                            "allow_null": 0,
                             "bidirectional": 0,
+                            "ui": 1,
                             "bidirectional_target": []
                         },
                         {
