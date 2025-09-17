@@ -186,6 +186,10 @@ wp_reset_postdata();
                 <?php endif; ?>
                 
                 <div class="row row-gap-2">
+                    <?php 
+                    // Reset animation counter for end-of-life products to start animations earlier
+                    $eol_animation_counter = 0; 
+                    ?>
                     <?php foreach ($end_of_life_products as $product) : ?>
                         <?php
                         $is_orderable = get_field('bestelbaar', $product->ID) ?? false;
@@ -207,10 +211,10 @@ wp_reset_postdata();
                             'button' => true,
                             'is_orderable' => $is_orderable,
                         ); ?>
-                        <div class="col-12 col-lg-4 col-xl-3" data-animate="fade-up" data-animate-delay="<?= $animation_counter * 150 ?>">
+                        <div class="col-12 col-lg-4 col-xl-3" data-animate="fade-up" data-animate-delay="<?= $eol_animation_counter * 150 ?>">
                             <?php get_template_part('template-parts/card', null, $post_args); ?>
                         </div>
-                        <?php $animation_counter++; ?>
+                        <?php $eol_animation_counter++; ?>
                     <?php endforeach; ?>
                 </div>
 
