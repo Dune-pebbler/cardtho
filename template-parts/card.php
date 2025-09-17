@@ -77,7 +77,9 @@ $description = wp_trim_words($description, 10, '...');
             </div>
         <?php endif; ?>
     <?php else: ?>
-        <span>Alleen onderhoud</span>
+        <div class="card__button">
+            <span class="btn">Meer informatie</span>
+        </div>
     <?php endif; ?>
 
 </a>
