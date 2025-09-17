@@ -36,7 +36,6 @@ $button = get_sub_field('hero_button');
 
             <?php if ($image) : ?>
                 <div class="col-12 col-md-6 relative">
-                    <img class="stamp" src="<?= get_template_directory_uri() ?>/images/stamp.png" alt="evolis stamp">
                     <div class="img-container">
                         <img loading="lazy"
                             class="cover"

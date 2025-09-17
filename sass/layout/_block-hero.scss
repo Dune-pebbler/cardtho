@@ -131,25 +131,6 @@ section.block-hero {
     margin-top: 1em;
   }
   
-  .stamp {
-    position: absolute;
-    top: -100px;
-    z-index: 10;
-    max-width: 200px;
-    transform: rotate(15deg);
-    
-    // Responsive adjustments for stamp
-    @media (max-width: $screen-md-max) {
-      max-width: 150px;
-      top: -75px;
-    }
-    
-    @media (max-width: $screen-sm-max) {
-      max-width: 100px;
-      top: -50px;
-      right: 10px;
-    }
-  }
   
   // Additional responsive improvements for content
   .row {

@@ -242,3 +242,56 @@ function my_acf_google_map_api($api)
 # Random code
 $role_object = get_role('editor');
 $role_object->add_cap('edit_theme_options');
+
+# CUSTOM ADMIN COLUMNS FOR PRODUCTS
+// Add custom column to product admin list
+add_filter('manage_product_posts_columns', 'add_product_category_column');
+function add_product_category_column($columns) {
+    // Insert the category column after the title column
+    $new_columns = array();
+    foreach ($columns as $key => $value) {
+        $new_columns[$key] = $value;
+        if ($key === 'title') {
+            $new_columns['product_category'] = 'Categorie';
+        }
+    }
+    return $new_columns;
+}
+
+// Populate the custom column with taxonomy terms
+add_action('manage_product_posts_custom_column', 'populate_product_category_column', 10, 2);
+function populate_product_category_column($column, $post_id) {
+    if ($column === 'product_category') {
+        $terms = get_the_terms($post_id, 'product-groep');
+        if ($terms && !is_wp_error($terms)) {
+            $category_names = array();
+            foreach ($terms as $term) {
+                $category_names[] = $term->name;
+            }
+            echo implode(', ', $category_names);
+        } else {
+            echo '—';
+        }
+    }
+}
+
+// Make the category column sortable
+add_filter('manage_edit-product_sortable_columns', 'make_product_category_column_sortable');
+function make_product_category_column_sortable($columns) {
+    $columns['product_category'] = 'product_category';
+    return $columns;
+}
+
+// Handle the sorting functionality
+add_action('pre_get_posts', 'handle_product_category_column_sorting');
+function handle_product_category_column_sorting($query) {
+    if (!is_admin() || !$query->is_main_query()) {
+        return;
+    }
+    
+    $orderby = $query->get('orderby');
+    if ($orderby === 'product_category') {
+        $query->set('meta_key', 'product_category');
+        $query->set('orderby', 'meta_value');
+    }
+}

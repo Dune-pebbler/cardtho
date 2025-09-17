@@ -2,6 +2,8 @@ $font1: "avenir-next-lt-pro", sans-serif, Helvetica, Arial, sans-serif;
 $font2: "Roboto", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
   "Droid Sans", "Helvetica Neue", sans-serif;
 
+$bas: 40px;
+
 // Base font family for all elements
 * {
   font-family: $font2;
@@ -38,7 +40,7 @@ h6 {
   }
 }
 
-h1, h1 span {
+h1, h1 span, h1 div, h1 strong {
   font-size: 54px;
   margin-top: 24px;
   letter-spacing: 0.5px;
