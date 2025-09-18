@@ -8,6 +8,7 @@ $productgroep = get_sub_field('productgroep');
 $animation_counter = 0; // Single counter for smooth waterfall effect
 $eol_intro = get_sub_field('end_of_line_printers_intro');
 $uitgelichte_producten = get_sub_field('uitgelichte_producten'); // Get featured products
+$uitgelichte_eol_producten = get_sub_field('uitgelichte_eol_producten'); // Get featured end-of-line products
 
 // Get ordering options
 $orderby = get_sub_field('post_orderby') ?: 'date';
@@ -49,9 +50,14 @@ if ($uitgelichte_producten) {
     foreach ($uitgelichte_producten as $featured_product) {
         $featured_product_ids[] = $featured_product->ID;
     }
-    if (!empty($featured_product_ids)) {
-        $base_args['post__not_in'] = $featured_product_ids;
+}
+if ($uitgelichte_eol_producten) {
+    foreach ($uitgelichte_eol_producten as $featured_eol_product) {
+        $featured_product_ids[] = $featured_eol_product->ID;
     }
+}
+if (!empty($featured_product_ids)) {
+    $base_args['post__not_in'] = $featured_product_ids;
 }
 
 // Query for bestelbare products
@@ -95,6 +101,13 @@ if ($uitgelichte_producten && !empty($uitgelichte_producten)) {
         } else {
             $end_of_life_products[] = $featured_product;
         }
+    }
+}
+
+// Add featured end-of-line products first to end-of-life products
+if ($uitgelichte_eol_producten && !empty($uitgelichte_eol_producten)) {
+    foreach ($uitgelichte_eol_producten as $featured_eol_product) {
+        $end_of_life_products[] = $featured_eol_product;
     }
 }
 

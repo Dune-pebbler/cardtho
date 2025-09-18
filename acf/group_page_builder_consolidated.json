@@ -804,12 +804,12 @@
                             "bidirectional_target": []
                         },
                         {
-                            "key": "field_68a58a752dd33",
-                            "label": "End of line printers intro",
-                            "name": "end_of_line_printers_intro",
+                            "key": "field_uitgelichte_eol_producten",
+                            "label": "Uitgelichte end of line printer",
+                            "name": "uitgelichte_eol_producten",
                             "aria-label": "",
-                            "type": "wysiwyg",
-                            "instructions": "",
+                            "type": "post_object",
+                            "instructions": "Selecteer end-of-line producten die bovenaan de end-of-line sectie moeten verschijnen, ongeacht de sortering",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -817,12 +817,19 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "allow_in_bindings": 0,
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
-                            "delay": 0
+                            "post_type": [
+                                "product"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "object",
+                            "multiple": 1,
+                            "allow_null": 0,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
                         },
                         {
                             "key": "field_post_archive_orderby",
@@ -920,6 +927,27 @@
                             "placeholder": "bijv. bestelbaar, prijs, etc.",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_68a58a752dd33",
+                            "label": "End of line printers intro",
+                            "name": "end_of_line_printers_intro",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
                         }
                     ],
                     "min": "",

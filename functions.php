@@ -295,3 +295,20 @@ function handle_product_category_column_sorting($query) {
         $query->set('orderby', 'meta_value');
     }
 }
+
+// Filter the post_object field to only show end-of-line products
+function filter_uitgelichte_eol_producten($args, $field, $post_id) {
+    // Only apply this filter to our specific field
+    if ($field['name'] == 'uitgelichte_eol_producten') {
+        $args['meta_query'] = array(
+            array(
+                'key' => 'bestelbaar',
+                'value' => '0',
+                'compare' => '='
+            )
+        );
+    }
+    
+    return $args;
+}
+add_filter('acf/fields/post_object/query', 'filter_uitgelichte_eol_producten', 10, 3);
